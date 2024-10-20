@@ -45,6 +45,7 @@ public class Skill
 public class Education
 {
     public string Institution { get; set; }
+    public string SubInstitution { get; set; }
     public string Degree { get; set; }
     public string Years { get; set; } // E.g., "2011-2016, 2023"
 }

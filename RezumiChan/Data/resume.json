@@ -130,12 +130,14 @@
   ],
   "education": [
     {
-      "institution": "Texas A&M University, Dwight Look College of Engineering",
+      "institution": "Texas A&M University",
+      "subinstitution": "Dwight Look College of Engineering",
       "degree": "B.S. Computer Engineering",
       "years": "2011-2016, 2023"
     },
     {
-      "institution": "Theodore Roosevelt High School, Engineering & Technologies Academy",
+      "institution": "Theodore Roosevelt High School",
+      "subinstitution": "Engineering & Technologies Academy",
       "degree": "Diploma",
       "years": "2007-2011"
     }
