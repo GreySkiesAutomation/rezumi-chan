@@ -1,0 +1,226 @@
+{
+  "Starstories": [
+    {
+      "title": "Bloodsport Telemetry System",
+      "context": "BattleBots",
+      "situation": "I was tasked with developing the telemetry system for Bloodsport under the uncertainty of a 6-week deadline due to an unknown TV deal and filming schedule.",
+      "task": "My goal was to build a real-time telemetry system that could monitor the robot’s health for engineers while creating a visually engaging, cinematic display for TV audiences.",
+      "action": [
+        "Dived deep into RF protocols, particularly LoRa, to ensure reliable data transmission in the RF-hostile competition environment.",
+        "Self-taught microcontroller design, using KiCAD to create custom boards and manage manufacturing overseas.",
+        "Researched telemetry and data visualization best practices, developing a Unity3D-based interface that balanced functionality for engineers with visual appeal for TV audiences.",
+        "Managed the entire process under the pressure of unknown deadlines, constantly iterating and learning new aspects of embedded systems, RF transmission, and sensor integration."
+      ],
+      "result": "Successfully delivered the fully functional telemetry system on time, which was featured prominently on TV.",
+      "categories": [
+        "Deliver Results",
+        "Deep Dive",
+        "Ownership",
+        "Learn and Be Curious",
+        "Think Big"
+      ]
+    },
+    {
+      "title": "DJ Deck Feature Ownership",
+      "context": "Wave",
+      "situation": "Took ownership of DJ Deck feature at Wave. Management wanted simplicity; I aimed for depth to satisfy hobbyist DJs.",
+      "task": "Negotiate a solution that balanced management’s desire for accessibility with my vision of a more advanced tool.",
+      "action": [
+        "Pushed for advanced features like beat matching and EQ.",
+        "Narrowed down the key features that are the most important for professional DJs.",
+        "Innovated with our CCO to design more intuitive and approachable interfaces for 'advanced' functionality.",
+        "Negotiated compromises with production and management."
+      ],
+      "result": "Delivered a feature that was both approachable and satisfying for serious DJs.",
+      "categories": [
+        "Ownership",
+        "Earn Trust",
+        "Insist on the Highest Standards",
+        "Deliver Results",
+        "Customer Obsession",
+        "Think Big",
+        "Have a Backbone & Disagree and Commit"
+      ]
+    },
+    {
+      "title": "VVR2 Rhythm Game",
+      "context": "Tender Claws",
+      "situation": "Owned the rhythm game feature for Virtual Virtual Reality 2. My experience as a rhythm game player shaped the design.",
+      "task": "Create an engaging rhythm game feature that would appeal to both casual and experienced players.",
+      "action": [
+        "Designed a generic and extensible rhythm game engine to accommodate various gameplay styles.",
+        "Chose Beat Saber clone mechanics to fit the game’s satirical theme.",
+        "Conducted the majority of playtesting, refining the game’s playability and feel.",
+        "Integrated motion controllers across multiple VR platforms for compatibility."
+      ],
+      "result": "The feature was praised for its polish and depth, appealing to both new and experienced players.",
+      "categories": [
+        "Customer Obsession",
+        "Insist on the Highest Standards",
+        "Think Big",
+        "Deliver Results"
+      ]
+    },
+    {
+      "title": "Bloodsport – Cinematic Telemetry UI",
+      "context": "BattleBots",
+      "situation": "The Bloodsport telemetry system was designed to give engineers real-time data, but I aimed to create something visually striking.",
+      "task": "Design a telemetry UI that provides critical information while looking visually spectacular for viewers.",
+      "action": [
+        "Drew inspiration from sci-fi interfaces in movies like Iron Man.",
+        "Designed a dynamic interface featuring animations and real-time data displays.",
+        "Iterated on the UI to ensure it maintained necessary functionality."
+      ],
+      "result": "The telemetry UI delivered a high-quality, sci-fi-inspired display that enhances entertainment value.",
+      "categories": [
+        "Think Big",
+        "Invent and Simplify",
+        "Deliver Results"
+      ]
+    },
+    {
+      "title": "Subtitle Tools",
+      "context": "Tender Claws",
+      "situation": "Tasked with implementing subtitles for multiple language versions of the game.",
+      "task": "Ensure subtitles were completed on time, error-free, and adaptable for future projects.",
+      "action": [
+        "Attempted a manual process to verify and fix subtitles but recognized it was too tedious.",
+        "Created automated tools to streamline subtitle generation.",
+        "Worked with the team to integrate and document the tools for long-term efficiency."
+      ],
+      "result": "Delivered subtitles on time with far fewer errors.",
+      "categories": [
+        "Invent and Simplify",
+        "Bias for Action",
+        "Earn Trust",
+        "Deliver Results"
+      ]
+    },
+    {
+      "title": "The Music Update in VVR2",
+      "context": "Tender Claws",
+      "situation": "I was the only engineer working on The Music Update for VVR2, alongside one artist and the QA lead.",
+      "task": "Extend the rhythm game feature by adding 4 new levels and fixing long-standing bugs.",
+      "action": [
+        "Added 4 new rhythm game levels and implemented scripts for the artist.",
+        "Playtested and debugged extensively."
+      ],
+      "result": "Released the update on time, leading to a boost in new users.",
+      "categories": [
+        "Ownership",
+        "Deliver Results"
+      ]
+    },
+    {
+      "title": "Stranger Things VR Chapter Ownership",
+      "context": "Tender Claws",
+      "situation": "Each developer was entrusted with entire chapters of Stranger Things VR to fully own.",
+      "task": "I was responsible for handling development, production schedules, and quality testing.",
+      "action": [
+        "Managed all aspects of my chapter, from implementation to testing.",
+        "Took initiative to handle production details."
+      ],
+      "result": "Delivered my chapter on time without major issues.",
+      "categories": [
+        "Earn Trust",
+        "Ownership",
+        "Deliver Results",
+        "Insist on the Highest Standards"
+      ]
+    },
+    {
+      "title": "Roblox Exploration",
+      "context": "Wave",
+      "situation": "Wave struck an exploratory partnership with Roblox to port some content.",
+      "task": "Help the team learn Lua and the Roblox platform.",
+      "action": [
+        "Spent significant time learning Roblox development.",
+        "Worked with the team to identify technical limitations within Roblox."
+      ],
+      "result": "Shipped one of the most sophisticated concert performance experiences in Roblox.",
+      "categories": [
+        "Deep Dive",
+        "Learn and Be Curious",
+        "Deliver Results"
+      ]
+    },
+    {
+      "title": "Wave – Social Safety Features",
+      "context": "Wave",
+      "situation": "Recognized that user safety in immersive social VR experiences was critical.",
+      "task": "Develop safety systems that exceeded typical expectations.",
+      "action": [
+        "Conducted in-depth research into the highest standards for social safety.",
+        "Implemented comprehensive safety features."
+      ],
+      "result": "Provided a safe environment, setting a new benchmark for social safety in VR.",
+      "categories": [
+        "Insist on the Highest Standards",
+        "Customer Obsession",
+        "Earn Trust"
+      ]
+    },
+    {
+      "title": "Reusable Rhythm Game Engine",
+      "context": "Tender Claws",
+      "situation": "I saw an opportunity to create a reusable engine for rhythm games.",
+      "task": "Build a robust, flexible rhythm game system for future projects.",
+      "action": [
+        "Designed a modular rhythm game engine in Unity.",
+        "Structured the system to be adaptable across various game designs."
+      ],
+      "result": "The engine stands as a model for scalable game design.",
+      "categories": [
+        "Think Big",
+        "Invent and Simplify",
+        "Deliver Results"
+      ]
+    },
+    {
+      "title": "Wave’s Pivot from VR to 2D Video",
+      "context": "Wave",
+      "situation": "Wave made a strategic decision to pivot from VR experiences to 2D video content.",
+      "task": "Support the pivot while maintaining creativity.",
+      "action": [
+        "Committed to making the pivot successful by exploring new ways to engage users."
+      ],
+      "result": "Contributed to the 2D video pivot's success by maintaining user engagement.",
+      "categories": [
+        "Have Backbone; Disagree and Commit",
+        "Think Big",
+        "Invent and Simplify"
+      ]
+    },
+    {
+      "title": "Bloodsport – Safety Compliance",
+      "context": "BattleBots",
+      "situation": "Noticed safety compliance was often overlooked.",
+      "task": "Design safety covers that adhere to the highest standards.",
+      "action": [
+        "Conducted thorough research on safety compliance standards.",
+        "Designed and manufactured robust safety covers."
+      ],
+      "result": "Ensured safety covers exceeded typical safety standards.",
+      "categories": [
+        "Insist on the Highest Standards",
+        "Ownership",
+        "Deliver Results"
+      ]
+    },
+    {
+      "title": "Robot Combat Semi-autonomous Proposals",
+      "context": "Personal",
+      "situation": "Wanted to use semi-autonomous control in my first entry into robot combat.",
+      "task": "Prove my advanced design approach could work in combat robotics.",
+      "action": [
+        "Pushed forward with my design, incorporating sensor feedback and custom electronics."
+      ],
+      "result": "Successfully demonstrated the viability of semi-autonomous controls in a competitive environment.",
+      "categories": [
+        "Invent and Simplify",
+        "Deliver Results",
+        "Ownership"
+      ]
+    }
+  ]
+}

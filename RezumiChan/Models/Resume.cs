@@ -22,6 +22,7 @@ public class Contact
 public class Experience
 {
     public string Company { get; set; }
+    public string Context { get; set; }
     public string Location { get; set; }
     public string Title { get; set; }
     public string Duration { get; set; }
@@ -31,6 +32,7 @@ public class Experience
 public class Project
 {
     public string Name { get; set; }
+    public string Context { get; set; }
     public List<string> Description { get; set; } // List of bullet points for project descriptions
 }
 

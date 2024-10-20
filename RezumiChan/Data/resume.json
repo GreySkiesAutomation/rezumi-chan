@@ -10,6 +10,7 @@
   "experience": [
     {
       "company": "Tender Claws",
+      "context": "Tender Claws",
       "location": "Los Angeles, CA (Remote)",
       "title": "Game Developer",
       "duration": "February 2021 - August 2024",
@@ -20,6 +21,7 @@
     },
     {
       "company": "Wave (formerly TheWaveVR)",
+      "context": "Wave",
       "location": "Austin, TX",
       "title": "Engineer",
       "duration": "February 2017 - Nov 2020",
@@ -33,6 +35,7 @@
   "projects": [
     {
       "name": "Grey Skies Automation",
+      "context": "Personal",
       "description": [
         "Solo designer, builder, and driver of sport combat robots, competing across the country.",
         "3 lb class and smaller custom designs featuring 3D printing, laser cut, and CNC milled parts, as well as custom designed electronics hardware and firmware.",
@@ -41,6 +44,7 @@
     },
     {
       "name": "Bloodsport",
+      "context": "BattleBots",
       "description": [
         "Teammember and telemetry specialist on Team Bloodsport on the television show BattleBots.",
         "Designed and implemented custom electronics, firmware, and software with cinematic-style UI."
@@ -48,6 +52,7 @@
     },
     {
       "name": "Pearl Graphics",
+      "context": "Personal",
       "description": [
         "Sole creator and developer of a Unity-based motion capture and effects suite focused on game/application streaming narration and concert performance as a virtual avatar.",
         "Utilizes Kinect for body motion capture and iPhone face motion capture."

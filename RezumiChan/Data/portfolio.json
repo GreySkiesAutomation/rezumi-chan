@@ -1,0 +1,78 @@
+{
+  "projects": [
+    {
+      "title": "Stranger Things VR",
+      "context": "Tender Claws",
+      "role": "Game Developer",
+      "company": "Tender Claws",
+      "description": " As a Designer and Software Engineer for \"Stranger Things VR,\" released on Meta Quest 2 and 3 in February 2024, I had a blast contributing to this immersive virtual reality game. \"Stranger Things VR\" lets you experience the world of Stranger Things from the never-before-seen perspective of Vecna as he explores unknown realities, forms the hive mind, and enacts his plan for revenge against Eleven and the town of Hawkins. Players invade the dreams and memories of fan-favorite characters, harness telekinetic powers to possess minds, and battle creatures as Henry Creel’s transformation into Vecna and his influence on the events of prior seasons is revealed. I worked on designing and refining various game mechanics and making sure everything ran smoothly. I tackled a bunch of challenges, such handling urgent changes from the publisher and fixing critical bugs quickly. My adaptability and technical skills helped create a polished and engaging VR experience that adds a new layer to the \"Stranger Things\" universe. ",
+      "technologies": ["Unity", "Meta Quest", "C#"]
+    },
+    {
+      "title": "Virtual Virtual Reality 2",
+      "context": "Tender Claws",
+      "role": "Game Developer",
+      "company": "Tender Claws",
+      "description": " As a Software Engineer and Game Designer for \"Virtual Virtual Reality 2,\" released on Meta Quest 2 and 3, Meta Rift, and SteamVR in March 2022, I played a key role in this satirical action/adventure game. The game explores the fate of avatars left behind when a metaverse shuts down, featuring 10+ hours of gameplay with mech piloting, avatar rescue, and unique challenges. I was the lead designer, implementer, and tester for the rhythm minigame sections, which were highlighted in the latest game update from summer 2024. My responsibilities included designing, concepting, implementation, and testing various gameplay mechanics and features in the game. This project was an exciting challenge, combining humor, action, and rhythm elements to create a unique VR experience. ",
+      "technologies": ["Unity", "Meta Quest", "SteamVR", "C#"]
+    },
+    {
+      "title": "Wave",
+      "context": "Wave",
+      "role": "Engineer",
+      "company": "Wave",
+      "description": " At Wave, I held roles as a software engineer and community manager, contributing to the platform's evolution into an interstellar music festival accessible anytime, anywhere. I founded and managed the \"Resident DJ Program,\" which gave a platform to independent and community performers. I also helped ship experiences with headline artists such as Jauz, TOKiMONSTA, Imogen Heap, John Legend, Tinashe, The Glitch Mob, StrangeLoop, and Kill The Noise. My contributions were instrumental in launching Wave and developing key features such as built-in DJ turntables, the innovative \"WaveMaker\" venue creation tool, and enhancements in social networking and safety. I also occasionally performed, enhancing the vibrant community experience of live concerts, mind-bending audio-visual experiences, and private dance parties within the Wave universe.",
+      "technologies": ["Unity", "SteamVR", "Meta Rift", "C#", "JavaScript"]
+    },
+    {
+      "title": "Bloodsport",
+      "context": "BattleBots",
+      "role": "Telemetry Specialist",
+      "company": "Team Bots ‘n’ Stuff Robotics",
+      "description": " As the lead for the bespoke telemetry system inside Bloodsport, one of BattleBots' formidable contenders, I conceptualized and implemented a cutting-edge design to monitor and broadcast the robot's health in real-time. Using KiCAD, I custom-designed the electronics for overseas manufacturing and assembly. The live monitoring interface, developed in Unity, displayed data on a laptop connected to a receiver, showcasing the robot's status with cinematic flair inspired by iconic movie interfaces from Iron Man, The Matrix, and Minority Report. My work ensured that Bloodsport met the high entertainment standards of BattleBots while providing crucial performance insights for both live audiences and post-match analysis. ",
+      "technologies": ["Embedded Systems", "Unity", "KiCAD", "C++"]
+    },
+    {
+      "title": "Grey Skies Automation",
+      "context": "Personal",
+      "role": "Owner & Operator",
+      "description": "\nI operate Grey Skies Automation as both a sport combat robotics team and an independent robot parts shop. Known for designing innovative robots like Data Collector and Two Factor Annihilation, I specialize in integrating custom electronics and firmware for advanced \"smart\" driving assistance. This technology makes my robots easier to control, automatically adjusts controls based on arena conditions and damage sustained, and counters forces like gyroscopic procession.\nTwo Factor Annihilation, my latest creation, showcases cutting-edge capabilities by utilizing a Steam Deck for driving, real-time settings adjustments, and internal status feedback. At its debut event, Two Factor Annihilation achieved a notable 2nd place finish, highlighting my competitive edge and technical prowess. This achievement also led to an interview opportunity with the National Havoc Robot League.\nI utilize expertise in materials science and manufacturing to Grey Skies Automation, overseeing precision outsourcing of laser-cut metal and CNC-milled carbon fiber parts, as well as personally fabricating parts with processess such as CNC and manual milling, and 3D printing of advanced materials like carbon fiber nylon, I ensure each robot meets exact specifications, integrating technical innovation with meticulous craftsmanship. ",
+      "technologies": ["Embedded Systems", "Unity", "C#", "C++"]
+    },
+    {
+      "title": "Pearl Graphics",
+      "context": "Personal",
+      "role": "Personal Project",
+      "description": " I've developed \"Pearl Graphics,\" a bespoke motion capture and streaming overlay suite for my personal video streaming and editing projects. This suite utilizes a Kinect and iPhone for face capture, enabling me to control an anime-style avatar on screen. The software extrapolates data from facial capture to apply effects such as adjusting the avatar's RGB-style lighting according to my mood. \"Pearl Graphics\" supports \"Virtual YouTuber\" style streams and enhances DJ performances in virtual venues, with overlays responsive to audio input and capable of displaying stream chat. ",
+      "technologies": ["Unity", "C#"]
+    },
+    {
+      "title": "Game Jam Projects",
+      "context": "Personal",
+      "role": "Personal Projects",
+      "description": " I actively participate in Game Jam and Hackathon events, where I thrive on creating games within tight deadlines, often producing a playable prototype in just 24 hours. Some of my notable projects include \"Rizumu Hana\" (VR rhythm game where players shoot robotic flowers to the beat) and \"DJ Simulator\" (VR rhythm game mimicking festival-style DJ stage antics). In addition to game development, I've also tackled practical applications of AR technology. One project involved using the Magic Leap AR system to develop a solution for managing stock status and expiration in warehouse environments. This unnamed project demonstrated my ability to leverage AR for real-world applications, combining technical skill with innovative problem-solving. ",
+      "technologies": ["Unity", "SteamVR"]
+    },
+    {
+      "title": "Talking 3D Printers",
+      "context": "Personal",
+      "role": "Personal Project",
+      "description": " I've heavily modified my personal 3D printers with speakers and audio playback boards, enhancing them with unique voice cues to announce status and errors. Using RepRapFirmware printer server software and customized firmware, I've integrated functionalities that trigger audio clips for key status changes, including \"print started,\" \"print finished,\" \"macro completed,\" \"error encountered,\" and \"nozzle ready for change.\" This setup not only adds a personalized touch to my printing process but also enhances operational efficiency with clear, audible feedback. ",
+      "technologies": ["Embedded Systems", "RepRapFirmware"]
+    },
+    {
+      "title": "MIDI Controllers",
+      "context": "Personal",
+      "role": "Personal Projects",
+      "description": " I've embarked on various MIDI controller projects for music production and DJing, showcasing my passion for both music and craftsmanship. Among them is a full-size 88-key MIDI keyboard crafted in a beautiful red oak chassis, blending precision electronics with artisanal woodworking. Additionally, I've designed giant play buttons that not only control but also visually display the status of each deck's beatgrid, equalizer settings, and loop status. These projects not only enhance my music production capabilities but also highlight my dedication to merging technical innovation with meticulous woodworking craftsmanship. ",
+      "technologies": ["Teensy", "C#", "MIDI"]
+    },
+    {
+      "title": "Scratchbot",
+      "context": "Personal",
+      "role": "Personal Project",
+      "description": " During my college years, I developed a robotic modification for a turntable that enabled live vinyl scratching synchronized to the beat of another track. This project utilized MIDI commands and timing data to coordinate pre-programmed subroutines with the backing track. I received 3D printed parts for later prototypes at Texas A&M University's Open 3D Printing Studio. ",
+      "technologies": ["Arduino", "C++"]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+
+About the job
+
+Job Title: Senior Technical Designer
+
+
+Type: Full time
+
+
+Who We Are: Disbelief is a game development studio focusing on contracting and consulting services. We’ve worked with both AAA and independent studios to help their projects ship. Notable projects we’ve worked on include Tiny Tina’s Wonderlands, Minecraft, Borderlands 3, Gears Tactics, Gears 5, and Pacific Drive.
+
+
+At Disbelief we value work-life balance, and want to create an alternative to the crunch-culture prevalent in game development. We also believe strongly in investing in our talent and our team. Disbelief is a place to puzzle out the solutions to cutting-edge problems in graphics and engine programming, but also a place where people can grow their careers and skill sets as valued members of a stable and close knit team.
+
+
+Description:
+
+Currently, we’re looking for a Senior Technical Designer. This opportunity is for a full-time position in Chicago, IL or Cambridge, MA. 
+
+
+Technical Designers at Disbelief combine a multitude of technical skills to solve player facing and development challenges. Senior Technical Designers are leaders and developers in their project. You should be comfortable working independently and with a team. Mentorship, sharing experience, and contributing to the growing capabilities of the Technical Design team is a key responsibility of our Senior talent. Our Technical Designers take from a diverse range of skills and are just as comfortable working in code as creating content. We seek developers that will blur the boundaries between traditional Game Design and Engineering. You must be comfortable with moving between code, script, and content while being able to assess the outcomes of incoming changes actual and proposed. 
+
+
+We believe a diverse team is a stronger team, and we encourage marginalized candidates to apply.
+
+
+Key Responsibilities
+
+    Solve technical problems from a senior designer’s point of view and be able to predict the efficacy of solutions
+    Mentor fellow Technical Designers
+    Communicate with clients on team progress and problems as they arise
+    Solve technical/feature issues in innovative ways
+    Clearly communicate your work to others
+    Prototype new workflows, systems, and solutions
+    Explore new software and techniques, including novel solutions
+    Champion for the player and developers, fight for quality
+    Experience with UI/UX design and/or implementation a plus!
+
+
+Skills and Requirements
+
+    Extensive understanding of gameplay systems, game design principles, and industry standards
+    Ability to write scripts and create scripted systems and asset pipelines from scratch
+    Ability to read and comprehend code (C/C++/etc), enough to discuss implementations with Engineers and debug broken functionality
+    Able to piece together content/dev pipelines out of multiple technologies
+    Degree or equivalent work experience in Tech. Design/Game Design/Graphic Design/Computer Science/or another related field
+    Ability to produce AAA quality game content
+    Excellent communication skills, both verbal and written
+    5+ years of experience in game development
+    3+ years of Unreal experience
+    At least one shipped Unreal Engine title
+    Experience working on a Console title (Xbox, PlayStation, Switch, AR/VR, etc) is a plus.
+
+
+Location: Chicago, IL or Cambridge, MA
+
+
+Relocation Assistance: Available where applicable
+
+
+Remote: Hybrid. Designers are in the office based on project needs, but can often work from home. Some of our projects require access to physical infrastructure daily.
+
+
+Visa Sponsorship: No. Disbelief does not offer visa sponsorship at the current time. We are an
+
+E-Verify employer.
+
+
+Technologies: Most of our work is technical in nature and within a wide variety of tech stacks and game engines. Primarily we work with Unreal Engine, but we also work with custom game engines. Our work often requires researching and learning new/old technologies. Our primary platforms are PC, Xbox, Playstation, Switch, and VR/AR devices. 
+
+
+Contact: jobs@disbelief.com
+
+
