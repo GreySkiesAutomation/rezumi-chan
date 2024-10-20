@@ -1,0 +1,138 @@
+{
+  "name": "Riko Balakit",
+  "summary": "Innovating at the intersection of music tech, immersive media, and robotics.",
+  "contact": {
+    "location": "Austin, TX",
+    "phone": "(210) 508-8774",
+    "email": "riko@balak.it",
+    "website": "http://riko.balak.it/"
+  },
+  "experience": [
+    {
+      "company": "Tender Claws",
+      "location": "Los Angeles, CA (Remote)",
+      "title": "Game Developer",
+      "duration": "February 2021 - August 2024",
+      "description": [
+        "Designed and implemented gameplay for two Unity-based virtual reality titles, “Virtual Virtual Reality 2” and “Stranger Things VR”, released on Meta Quest and Steam.",
+        "Lead development of rhythm game features."
+      ]
+    },
+    {
+      "company": "Wave (formerly TheWaveVR)",
+      "location": "Austin, TX",
+      "title": "Engineer",
+      "duration": "February 2017 - Nov 2020",
+      "description": [
+        "Generalist engineer, designing and implementing major features in the Unity-based client app and backend support for these features.",
+        "Nurtured the community since launch as the first Community Manager.",
+        "Introduced and directed the community’s Resident DJ Program."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Grey Skies Automation",
+      "description": [
+        "Solo designer, builder, and driver of sport combat robots, competing across the country.",
+        "3 lb class and smaller custom designs featuring 3D printing, laser cut, and CNC milled parts, as well as custom designed electronics hardware and firmware.",
+        "Owner and operator of a robot parts and tools shop by the same name."
+      ]
+    },
+    {
+      "name": "Bloodsport",
+      "description": [
+        "Teammember and telemetry specialist on Team Bloodsport on the television show BattleBots.",
+        "Designed and implemented custom electronics, firmware, and software with cinematic-style UI."
+      ]
+    },
+    {
+      "name": "Pearl Graphics",
+      "description": [
+        "Sole creator and developer of a Unity-based motion capture and effects suite focused on game/application streaming narration and concert performance as a virtual avatar.",
+        "Utilizes Kinect for body motion capture and iPhone face motion capture."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Software Development",
+      "skills": [
+        "Unity",
+        "Unreal",
+        "Virtual Reality (SteamVR, Meta Quest, Meta Rift, Windows Mixed Reality)",
+        "Augmented Reality (Meta Quest, Magic Leap)",
+        "Motion Capture",
+        "Netcode",
+        "Databases (MySQL, SQLite, MongoDB)",
+        "MIDI"
+      ]
+    },
+    {
+      "category": "Programming Languages",
+      "skills": [
+        "C# (Proficient)",
+        "C++ (Proficient)",
+        "C (Familiar)",
+        "JavaScript (Familiar)",
+        "Python (Familiar)",
+        "PHP (Familiar)",
+        "HTML (Familiar)",
+        "CSS (Familiar)"
+      ]
+    },
+    {
+      "category": "Design Tools",
+      "skills": [
+        "SolidWorks",
+        "Fusion 360",
+        "KiCAD",
+        "Photoshop"
+      ]
+    },
+    {
+      "category": "Prototyping and Manufacturing",
+      "skills": [
+        "3D printing (Slicing, Operation, Troubleshooting, Repair)",
+        "PCB Design",
+        "PCB Assembly (THT & SMT)",
+        "CNC Machining",
+        "Manual Machining",
+        "Woodworking",
+        "Laser Engraving & Cutting"
+      ]
+    },
+    {
+      "category": "Embedded Systems",
+      "skills": [
+        "Microcontrollers (Arduino, Teensy, ESP32, STM32)",
+        "Wireless Communication (Bluetooth, BLE, LoRa)"
+      ]
+    },
+    {
+      "category": "Collaboration Tools",
+      "skills": [
+        "Perforce",
+        "Git",
+        "Slack",
+        "JIRA",
+        "Asana",
+        "Trello",
+        "Confluence",
+        "Google Office"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Texas A&M University, Dwight Look College of Engineering",
+      "degree": "B.S. Computer Engineering",
+      "years": "2011-2016, 2023"
+    },
+    {
+      "institution": "Theodore Roosevelt High School, Engineering & Technologies Academy",
+      "degree": "Diploma",
+      "years": "2007-2011"
+    }
+  ]
+}
