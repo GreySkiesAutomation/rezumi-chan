@@ -209,7 +209,7 @@
     },
     {
       "title": "Robot Combat Semi-autonomous Proposals",
-      "context": "Personal",
+      "context": "Grey Skies",
       "situation": "Wanted to use semi-autonomous control in my first entry into robot combat.",
       "task": "Prove my advanced design approach could work in combat robotics.",
       "action": [
@@ -220,6 +220,148 @@
         "Invent and Simplify",
         "Deliver Results",
         "Ownership"
+      ]
+    },
+    {
+      "title": "Bloodsport Telemetry System",
+      "context": "BattleBots",
+      "situation": "I was tasked with developing the telemetry system for Bloodsport under the uncertainty of a 6-week deadline due to an unknown TV deal and filming schedule.",
+      "task": "My goal was to build a real-time telemetry system that could monitor the robot’s health for engineers while creating a visually engaging, cinematic display for TV audiences.",
+      "action": [
+        "Dived deep into RF protocols, particularly LoRa, to ensure reliable data transmission in the RF-hostile competition environment.",
+        "Self-taught microcontroller design, using KiCAD to create custom boards and manage manufacturing overseas.",
+        "Researched telemetry and data visualization best practices, developing a Unity3D-based interface that balanced functionality for engineers with visual appeal for TV audiences.",
+        "Managed the entire process under the pressure of unknown deadlines, constantly iterating and learning new aspects of embedded systems, RF transmission, and sensor integration."
+      ],
+      "result": "Successfully delivered the fully functional telemetry system on time, which was featured prominently on TV.",
+      "categories": [
+        "Deliver Results",
+        "Deep Dive",
+        "Ownership",
+        "Learn and Be Curious",
+        "Think Big"
+      ]
+    },
+    {
+      "title": "Steam Deck Robot Integration",
+      "context": "Grey Skies",
+      "situation": "After developing my first semi-autonomous combat robot, I wanted to refine its control system by integrating more advanced features such as telemetry, real-time logging, and live settings adjustments.",
+      "task": "Integrate the Steam Deck as the primary controller for the robot to allow for live telemetry viewing, logging, and on-the-fly settings changes, which were not possible with the previous PS3 controller setup.",
+      "action": [
+        "Integrated the Steam Deck to not only control the robot but also display telemetry data and allow real-time configuration and logging, eliminating the need to reupload firmware for every adjustment.",
+        "Developed a telemetry system that showed a 3D view of the robot's orientation, provided audio feedback when the robot received or delivered heavy impacts, and displayed motor controller and battery status in real time.",
+        "Incorporated feedback from battle testing, including adding a settings lock to prevent accidental changes and adjusting Steam Deck power management to prevent sleep mode during matches."
+      ],
+      "result": "The integration worked flawlessly, significantly enhancing the robot's usability and impressing the robot combat community. This led to a feature video on the largest robot combat channel, where I was interviewed about my work.",
+      "categories": [
+        "Learn and Be Curious",
+        "Invent and Simplify",
+        "Insist on the Highest Standards"
+      ]
+    },
+    {
+      "title": "Wave Social Media Ownership",
+      "context": "Wave",
+      "situation": "I was temporarily given control of the social media at Wave for about a year after our previous lead was removed. I had some experience at a hobby level, so I took over while balancing other responsibilities.",
+      "task": "My job was to maintain and grow our social media presence by posting schedule updates, engaging with users, managing campaigns, and handling a detailed Reddit Q&A.",
+      "action": [
+        "Managed weekly posts, created memes, and interacted with users, ensuring I represented the company professionally.",
+        "Handled difficult users diplomatically and prioritized content that aligned with both our community and company goals.",
+        "Developed a content schedule that included key updates and interactive campaigns to drive engagement."
+      ],
+      "result": "I successfully grew our social media presence, increasing brand trust and engagement. Management was pleased with how I represented the company and appreciated the improved communication with our users.",
+      "categories": [
+        "Earn Trust",
+        "Ownership",
+        "Deliver Results",
+        "Customer Obsession"
+      ]
+    },
+    {
+      "title": "Wave Resident DJ Program",
+      "context": "Wave",
+      "situation": "Proposed and led the Resident DJ program at Wave to address low user engagement between major events.",
+      "task": "Keep user interaction and engagement high during downtime between headline concerts.",
+      "action": [
+        "Advocated for the program to management, emphasizing user-generated content.",
+        "Navigated licensing issues and designed technical features to support elevated users.",
+        "Implemented a system allowing both casual and elevated users to participate."
+      ],
+      "result": "Successfully launched the program, increasing user engagement during time between headline concerts, and maintaining a more active community.",
+      "categories": [
+        "Customer Obsession",
+        "Bias for Action",
+        "Invent & Simplify",
+        "Are Right A Lot"
+      ]
+    },
+    {
+      "title": "Wave User Advocacy",
+      "context": "Wave",
+      "situation": "As the temporary community manager at Wave, I was responsible for addressing feature requests and user complaints. Several critical issues that impacted user experience were being delayed or ignored, but I knew these were essential to maintaining community satisfaction.",
+      "task": "I needed to advocate for the fixes and features that mattered most to the users, despite internal pushback from the team, which had different priorities.",
+      "action": [
+        "I developed a robust daily routine to collect data from various community sources to figure out what issues mattered the most to users, such as skimming Discord, reddit comment and post searches, and social media comments on regular intervals.",
+        "I gathered data from the community, showing clear patterns of frustration around certain issues.",
+        "I presented this data to the internal team, explaining how these updates and fixes were crucial for maintaining and growing user engagement.",
+        "I successfully advocated for a shift in development priorities, pushing for changes that aligned with the community’s needs."
+      ],
+      "result": "The team implemented the fixes I fought for, which led to a noticeable increase in user satisfaction and engagement. The community responded positively, validating my judgment and the changes made.",
+      "categories": [
+        "Are Right A Lot",
+        "Customer Obsession",
+        "Earn Trust",
+        "Deliver Results"
+      ]
+    },
+    {
+      "title": "Arduino ESC Programmer Design and Sales",
+      "context": "Grey Skies",
+      "situation": "I saw that reprogramming ESCs for robots involved confusing GPIO pin setups and messy wiring, which made the process inefficient and prone to errors.",
+      "task": "I needed to simplify the ESC reprogramming process for myself and others in the robot-building community by designing a more efficient solution.",
+      "action": [
+        "I designed a breakout board for the Arduino Nano to streamline the ESC reprogramming process, reducing the complexity of the setup.",
+        "I learned PCB design and addressed common issues with GPIO pin confusion, making the product user-friendly and easy to assemble.",
+        "I began selling the board as a low-cost kit or standalone product, making it accessible to a wider audience."
+      ],
+      "result": "The breakout board became popular within the niche robotics community, generating a few thousand dollars in revenue and eventually being resold by a major robotics shop. The simplified process I created made ESC reprogramming far more efficient for many builders.",
+      "categories": [
+        "Invent & Simplify",
+        "Bias for Action"
+      ]
+    },
+    {
+      "title": "Gizmo’s Diabetes Alarm",
+      "context": "Hobby",
+      "situation": "My cat, Gizmo, needed precise insulin dosing to manage diabetes, but I was concerned about accidentally missing doses or giving double doses.",
+      "task": "I needed to create a reliable system to track and manage Gizmo’s insulin doses, ensuring he was properly medicated without human error.",
+      "action": [
+        "I developed a simple device that detects when the insulin vial is taken out and replaced, preventing double doses or missed doses.",
+        "The device automatically logs the vial usage, ensuring that every dose is accounted for without requiring manual tracking.",
+        "I designed the system to be low-maintenance, ensuring it could run for years without firmware updates or intervention."
+      ],
+      "result": "The device has worked flawlessly for over 3 years, preventing dosing errors and keeping Gizmo’s diabetes properly managed. The system simplified the insulin dosing process, offering peace of mind and reliable results.",
+      "categories": [
+        "Invent and Simplify",
+        "Customer Obsession",
+        "Insist on the Highest Standards"
+      ]
+    },
+    {
+      "title": "Pearl Graphics",
+      "context": "Hobby",
+      "situation": "I was inspired by the advanced technology used at Wave and wanted to explore whether I could recreate similar motion capture experiences using consumer-grade equipment for personal streaming projects.",
+      "task": "I set out to create a low-cost motion capture system, using tools like a Kinect and iPhone, to test new ideas and build a versatile avatar control system for live streams.",
+      "action": [
+        "Developed software to integrate Kinect for body capture and iPhone for facial tracking, focusing on accessible hardware.",
+        "Added unique features such as RGB lighting effects that changed based on mood and audio input, enhancing the virtual streaming experience.",
+        "Used this project as a sandbox to test ideas not fully explored in Wave’s production tech, expanding my knowledge in real-time avatar control."
+      ],
+      "result": "Created a fully functional motion capture and streaming overlay suite, used for personal DJ streams and content creation. The project improved my understanding of motion capture systems and opened up new creative possibilities.",
+      "categories": [
+        "Learn and Be Curious",
+        "Think Big",
+        "Invent and Simplify"
       ]
     }
   ]

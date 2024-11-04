@@ -38,6 +38,11 @@ public class Project
 
 public class Skill
 {
+    public Skill(string categoryName, string[] skills)
+    {
+        Category = categoryName;
+        Skills = skills.ToList();
+    }
     public string Category { get; set; }
     public List<string> Skills { get; set; } // List of skills under this category
 }

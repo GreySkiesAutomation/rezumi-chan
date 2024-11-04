@@ -35,7 +35,7 @@
   "projects": [
     {
       "name": "Grey Skies Automation",
-      "context": "Personal",
+      "context": "Grey Skies",
       "description": [
         "Solo designer, builder, and driver of sport combat robots, competing across the country.",
         "3 lb class and smaller custom designs featuring 3D printing, laser cut, and CNC milled parts, as well as custom designed electronics hardware and firmware.",
@@ -76,14 +76,14 @@
     {
       "category": "Programming Languages",
       "skills": [
-        "C# (Proficient)",
-        "C++ (Proficient)",
-        "C (Familiar)",
-        "JavaScript (Familiar)",
-        "Python (Familiar)",
-        "PHP (Familiar)",
-        "HTML (Familiar)",
-        "CSS (Familiar)"
+        "C#",
+        "C++ ",
+        "C",
+        "JavaScript",
+        "Python",
+        "PHP",
+        "HTML",
+        "CSS"
       ]
     },
     {

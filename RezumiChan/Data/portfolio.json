@@ -34,7 +34,7 @@
     },
     {
       "title": "Grey Skies Automation",
-      "context": "Personal",
+      "context": "Grey Skies",
       "role": "Owner & Operator",
       "description": "\nI operate Grey Skies Automation as both a sport combat robotics team and an independent robot parts shop. Known for designing innovative robots like Data Collector and Two Factor Annihilation, I specialize in integrating custom electronics and firmware for advanced \"smart\" driving assistance. This technology makes my robots easier to control, automatically adjusts controls based on arena conditions and damage sustained, and counters forces like gyroscopic procession.\nTwo Factor Annihilation, my latest creation, showcases cutting-edge capabilities by utilizing a Steam Deck for driving, real-time settings adjustments, and internal status feedback. At its debut event, Two Factor Annihilation achieved a notable 2nd place finish, highlighting my competitive edge and technical prowess. This achievement also led to an interview opportunity with the National Havoc Robot League.\nI utilize expertise in materials science and manufacturing to Grey Skies Automation, overseeing precision outsourcing of laser-cut metal and CNC-milled carbon fiber parts, as well as personally fabricating parts with processess such as CNC and manual milling, and 3D printing of advanced materials like carbon fiber nylon, I ensure each robot meets exact specifications, integrating technical innovation with meticulous craftsmanship. ",
       "technologies": ["Embedded Systems", "Unity", "C#", "C++"]

@@ -1,45 +1,31 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Diagnostics;
-using System.IO;
 using RezumiChan.Models;
-using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using iText.IO.Font.Constants;
+using iText.Kernel.Font;
 using RezumiChan.Data;
 using iText.Kernel.Pdf;
 using iText.Layout;
-using iText.Layout.Borders;
 using iText.Layout.Element;
-using iText.Layout.Properties;
 
 class Program
 {
-    const string modelToUse = "gpt-4";
+    //model options: "gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-4", "gpt-4-32k"
+    const string modelToUse = "gpt-3.5-turbo";
+    private const int leftMargin = 10;
+    private const bool aiEnabled = true; // used so I can generate PDFs without using up tokens.
 
     static async Task Main(string[] args)
     {
         string filePath = "Data/resume.json"; // Adjust the path if needed
-        List<Message> messageHistory = new List<Message>();
 
         Resume resume = LoadResume(filePath);
 
         if (resume != null)
         {
-            /*
-            // Combine the relevant information into a single string for the API
-            string resumeText = $"{resume.Name}\n{resume.Summary}\nContact: {resume.Contact.Email}, {resume.Contact.Phone}\n";
-
-            foreach (var experience in resume.Experience)
-            {
-                resumeText += $"Experience: {experience.Title} at {experience.Company} ({experience.Duration})\n";
-            }
-
-            // Call the OpenAI API to get a summary
-            string summary = await GetSummaryFromOpenAI(resumeText);
-            Console.WriteLine("Summary from OpenAI:");
-            Console.WriteLine(summary);
-            */
+            Console.WriteLine("Resume loaded successfully");
         }
         else
         {
@@ -51,23 +37,7 @@ class Program
         Portfolio portfolio = LoadPortfolio(filePath);
         if (portfolio != null)
         {
-            /*
-            string portfolioText = $"Portfolio:\n";
-
-            foreach (var project in portfolio.Projects)
-            {
-                portfolioText += $"{project.Title}: {project.Role} at {project.Company} ({project.Context}). This is what I did: {project.Description}. I used the following skills to do it:";
-                foreach (var tech in project.Technologies)
-                {
-                    portfolioText += $" {tech}, ";
-                }
-            }
-
-            // Call the OpenAI API to get a summary
-            string summary = await GetSummaryFromOpenAI(portfolioText);
-            Console.WriteLine("Summary from OpenAI:");
-            Console.WriteLine(summary);
-            */
+            Console.WriteLine("Porfolio loaded successfully");
         }
         else
         {
@@ -79,26 +49,7 @@ class Program
         Stories stories = LoadStories(filePath);
         if (stories != null)
         {
-            /*
-            string storiesText = $"Stories:\n";
-
-            Console.WriteLine($"number of stories: {stories.Starstories.Count}");
-            foreach (var story in stories.Starstories)
-            {
-                storiesText += $"{story.Title} ({story.Context}): Situation: {story.Situation}. Task: {story.Task}. Actions:";
-                foreach (var action in story.Action)
-                {
-                    storiesText += $" {action}\n";
-                }
-
-                storiesText += $". Result: {story.Result}";
-            }
-
-            // Call the OpenAI API to get a summary
-            string summary = await GetSummaryFromOpenAI(storiesText);
-            Console.WriteLine("Summary from OpenAI:");
-            Console.WriteLine(summary);
-            */
+            Console.WriteLine("Stories loaded successfully");
         }
         else
         {
@@ -109,48 +60,87 @@ class Program
 
         JobPost job = LoadJobPost(filePath);
 
+        var greySkiesContext = GetContextSummary("Grey Skies", resume, stories, portfolio);
         var waveContext = GetContextSummary("Wave", resume, stories, portfolio);
         var tcContext = GetContextSummary("Tender Claws", resume, stories, portfolio);
         var battleBotsContext = GetContextSummary("BattleBots", resume, stories, portfolio);
 
-        /*
-        List<string> summary = await GetBulletPoints(waveContext, job);
-        Console.WriteLine($"Wave bullet points ({summary.Count}): ");
-        foreach (var line in summary)
+        List<string> tcBulletPoints = new List<string>();
+        List<string> waveBulletPoints= new List<string>();
+        List<string> bloodsportBulletPoints= new List<string>();
+        List<string> greyskiesBulletPoints= new List<string>();
+        List<Skill> skills= new List<Skill>();
+
+        string filename = "riko_balakit_resume_";
+
+        if (aiEnabled)
         {
-            Console.WriteLine($" - {line}");
+            tcBulletPoints = await GetBulletPoints(tcContext, job, 40, false);
+            waveBulletPoints = await GetBulletPoints(waveContext, job, 40, false);
+            bloodsportBulletPoints = await GetBulletPoints(battleBotsContext, job, 40, false);
+            greyskiesBulletPoints = await GetBulletPoints(greySkiesContext, job, 40, false);
+            skills = await GetRelevantSkills(resume, job);
+            filename += await GetJobName(job);
+        }
+        else
+        {
+            tcBulletPoints.Add("Lead designer and engineer for VR game projects at Tender Claws, contributing to successful releases");
+            tcBulletPoints.Add("Developed and refined gameplay mechanics, solved urgent issues, and ensured smooth operation of games. ");
+            tcBulletPoints.Add("Owned and managed entire chapters of immersive VR experiences, delivering on time and without major issues. ");
+            tcBulletPoints.Add("Designed and implemented reusable game engines, showcasing adaptability and innovation in game development. ");
+            waveBulletPoints.Add("Led and managed the Resident DJ Program at Wave, increasing user engagement during downtime between headline concerts.");
+            waveBulletPoints.Add("Spearheaded the development of advanced DJ Deck feature at Wave, balancing management's desire for simplicity with hobbyist DJs' needs");
+            waveBulletPoints.Add("Advocated for social safety features at Wave, setting new standards for immersive social VR experiences.");
+            waveBulletPoints.Add("Successfully advocated for user-requested fixes and features at Wave, leading to increased user satisfaction and engagement");
+            bloodsportBulletPoints.Add("Led the development of a cutting-edge telemetry system for BattleBots contender, Bloodsport, ensuring real-time monitoring and broadcast of robot health.");
+            bloodsportBulletPoints.Add("Utilized KiCAD to custom-design electronics for overseas manufacturing and developed a live monitoring interface in Unity for cinematic display of data.");
+            bloodsportBulletPoints.Add("Successfully met high entertainment standards of BattleBots while providing crucial performance insights for live audiences and post-match analysis.");
+            bloodsportBulletPoints.Add("Demonstrated expertise in embedded systems, Unity, KiCAD, and C++, delivering a visually striking telemetry UI that enhanced entertainment value.");
+            greyskiesBulletPoints.Add("Designed innovative combat robots like Data Collector and Two Factor Annihilation, showcasing technical prowess and competitive edge.");
+            greyskiesBulletPoints.Add("Utilized advanced electronics and firmware to create semi-autonomous controls for combat robots, demonstrating viability in a competitive environment.");
+            greyskiesBulletPoints.Add("Integrated Steam Deck as primary controller for combat robot, enabling live telemetry viewing, real-time logging, and on-the-fly settings adjustments, impressing robot combat community.");
+            greyskiesBulletPoints.Add("Designed and sold breakout board for Arduino Nano to simplify ESC reprogramming process, generating revenue and increasing efficiency for robot builders.");
+            var sdSkill = new Skill("Software Development", new[] { "Unreal", "Unity", "Virtual Reality", "Augmented Reality", "Netcode", "Databases" });
+            var programmingSkill = new Skill("Programming Languages", new[] { "C#", "C++", "C", "JavaScript", "Python" });
+            var designSkill = new Skill("Design Tools", new[] { "Photoshop" });
+            var prototypingSkill = new Skill("Prototyping and Manufacturing", new[] { "3D printing", "PCB Design", "CNC Machining" });
+            var embeddedSystemsSkill = new Skill("Embedded Systems", new[] { "Microcontrollers", "Wireless Communication" });
+            var collaborationSkill = new Skill("Collaboration Tools", new[] { "Perforce", "Git", "Slack", "JIRA", "Asana", "Trello", "Confluence", "Google Office" });
+            skills.Add(sdSkill);
+            skills.Add(programmingSkill);
+            skills.Add(designSkill);
+            skills.Add(prototypingSkill);
+            skills.Add(embeddedSystemsSkill);
+            skills.Add(collaborationSkill);
+            filename += "test";
         }
 
-        summary = await GetBulletPoints(tcContext, job);
-        Console.WriteLine($"Tender Claws bullet points ({summary.Count}): ");
-        foreach (var line in summary)
-        {
-            Console.WriteLine($" - {line}");
-        }
+        filename += $"_{GenerateTimestamp()}.pdf";
 
-        summary = await GetBulletPoints(battleBotsContext, job);
-        Console.WriteLine($"BattleBots bullet points ({summary.Count}): ");
-        foreach (var line in summary)
-        {
-            Console.WriteLine($" - {line}");
-        }
-        */
 
-        var skills = await GetRelevantSkills(resume, job);
-
-        string pdfPath = "example.pdf";
+        string pdfPath = filename;
 
         using (PdfWriter writer = new PdfWriter(pdfPath))
         {
             using (PdfDocument pdf = new PdfDocument(writer))
             {
                 Document document = new Document(pdf);
+                PdfFont helveticaFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+                document.SetFont(helveticaFont);
+
                 AddHeader(document, "Riko Balakit", "riko@balak.it", "(210) 508-8774", "Austin, TX");
 
-                AddHeadline(document, "Destroying a better future (PLACEHOLDER).");
                 AddSkillsSection(document, skills);
-                AddWorkSection(document, resume, job, stories, portfolio);
-                AddProjectsSection(document, resume, stories, portfolio);
+                AddDivider(document, "Work Experience");
+                AddWorkSection(document, "Tender Claws", "Game Developer", "Los Angeles, CA (Remote)",
+                    "February 2021 - August 2024", tcBulletPoints);
+                AddWorkSection(document, "Wave (Formerly TheWaveVR)", "Engineer", "Austin, TX",
+                    "February 2017 - November 2020", waveBulletPoints);
+                AddDivider(document, "Projects");
+                AddProjectSection(document, "BattleBots - Bloodsport", bloodsportBulletPoints);
+                AddProjectSection(document, "Grey Skies Automation", greyskiesBulletPoints);
+
+
                 AddEducationSection(document, resume);
             }
         }
@@ -159,11 +149,24 @@ class Program
         OpenPdf(pdfPath);
     }
 
+    public static string GenerateTimestamp()
+    {
+        // Get the current local time
+        DateTime now = DateTime.Now;
+
+        // Format the timestamp as yyyyMMdd_HHmmss
+        string formattedTimestamp = now.ToString("yyyyMMdd_HHmmss");
+
+        return formattedTimestamp;
+    }
+
     private static void AddSkillsSection(Document document, List<Skill> skills)
     {
         AddDivider(document, "Skills");
-        
-        const int fontSize = 10;
+
+        const int fontSize = 9;
+        Paragraph skillsParagraph = new Paragraph().SetFontSize(fontSize).SetMarginLeft(leftMargin);
+
         foreach (var skill in skills)
         {
             string skillLine = $" ";
@@ -176,68 +179,73 @@ class Program
             {
                 continue;
             }
-            
+
             skillLine = skillLine.Substring(0, skillLine.Length - 2);
-            skillLine += ".";
-            
-            Paragraph skillEntry = new Paragraph()
-                .SetFontSize(fontSize) // Set font size for header
-                .Add(new Text($"{skill.Category}:").SetUnderline()); // Add name
-            skillEntry.Add(skillLine);
+            skillLine += ".\n";
 
-            document.Add(skillEntry);
+            skillsParagraph.Add(new Text($"{skill.Category}:").SetUnderline()); // Add name
+            skillsParagraph.Add(skillLine);
         }
+
+        document.Add(skillsParagraph);
     }
 
-    private static void AddWorkSection(Document document, Resume resume, JobPost job, Stories stories,
-        Portfolio portfolio)
+    private static void AddWorkSection(Document document, string companyName, string title, string location,
+        string duration, List<string> bulletPoints)
     {
-        AddDivider(document, "Work Experience");
+        const int fontSize = 10;
+        Paragraph entry = new Paragraph().SetFontSize(fontSize).SetMarginLeft(leftMargin);
+        ;
+        entry.Add(new Text($"{companyName}").SetBold());
+        entry.Add(new Text($", {location} - "));
+        entry.Add(new Text($"{title}").SetUnderline());
+        entry.Add(new Text($", {duration}\n"));
+        const int bulletPointSize = 9;
+        foreach (var point in bulletPoints)
+        {
+            entry.Add(new Text($" - {point}\n").SetFontSize(bulletPointSize));
+        }
+
+        document.Add(entry);
     }
 
-    private static void AddProjectsSection(Document document, Resume resume, Stories stories, Portfolio portfolio)
+    private static void AddProjectSection(Document document, string projectName, List<string> bulletPoints)
     {
-        AddDivider(document, "Projects");
+        const int fontSize = 10;
+        Paragraph entry = new Paragraph().SetFontSize(fontSize).SetMarginLeft(leftMargin);
+        ;
+        entry.Add(new Text($"{projectName}\n").SetBold());
+
+        const int bulletPointSize = 9;
+        foreach (var point in bulletPoints)
+        {
+            entry.Add(new Text($" - {point}\n").SetFontSize(bulletPointSize));
+        }
+
+        document.Add(entry);
     }
 
     private static void AddEducationSection(Document document, Resume resume)
     {
         AddDivider(document, "Education");
-        const int fontSize = 10;
-        foreach (var education in resume.Education)
+        const int fontSize = 9;
+        Paragraph educationEntry = new Paragraph().SetFontSize(fontSize).SetMarginLeft(leftMargin);
+        ;
+
+        for (int i = 0; i < resume.Education.Count; i++)
         {
-            // Create a table with 2 columns
-            Table educationTable = new Table(2);
-            educationTable.SetWidth(UnitValue.CreatePercentValue(100)); // Make the table full width
+            educationEntry.Add(new Text($"{resume.Education[i].Institution}").SetFontSize(fontSize).SetBold());
+            educationEntry.Add(new Text($", {resume.Education[i].SubInstitution} - ").SetFontSize(fontSize));
+            educationEntry.Add(new Text($"{resume.Education[i].Degree}").SetFontSize(fontSize).SetItalic());
+            educationEntry.Add(new Text($", {resume.Education[i].Years}").SetFontSize(fontSize));
 
-            // Remove borders from the table
-            educationTable.SetBorder(Border.NO_BORDER);
-
-            // Add institution and sub-institution (left-aligned)
-            Cell institutionCell = new Cell()
-                .Add(new Paragraph($"{education.Institution}, {education.SubInstitution}").SetFontSize(fontSize));
-            institutionCell.SetBorder(Border.NO_BORDER); // Remove border from this cell
-            educationTable.AddCell(institutionCell);
-
-            Cell yearsCell = new Cell()
-                .Add(new Paragraph($"{education.Years}").SetTextAlignment(TextAlignment.RIGHT)
-                    .SetFontSize(fontSize)); // Right-aligned years
-            yearsCell.SetBorder(Border.NO_BORDER); // Remove border from this cell
-            educationTable.AddCell(yearsCell);
-
-            // Add the degree (left-aligned)
-            Cell degreeCell = new Cell()
-                .Add(new Paragraph($"{education.Degree}").SetFontSize(fontSize));
-            degreeCell.SetBorder(Border.NO_BORDER); // Remove border from this cell
-            educationTable.AddCell(degreeCell);
-
-            // Add an empty cell to balance the row
-            educationTable.AddCell(new Cell().SetBorder(Border.NO_BORDER)); // Remove border from this empty cell
-
-            // Add the table to the document
-            document.Add(educationTable);
-            document.Add(new Paragraph()); // This creates a line break
+            if (i < (resume.Education.Count - 1))
+            {
+                educationEntry.Add(new Text($"\n").SetFontSize(fontSize));
+            }
         }
+
+        document.Add(educationEntry);
     }
 
     private static void AddDivider(Document document, string sectionName)
@@ -273,17 +281,14 @@ class Program
     static void AddHeader(Document document, string name, string email, string phone, string city)
     {
         // Create the header paragraph
-        Paragraph header = new Paragraph()
-            .SetFontSize(14) // Set font size for header
-            .SetBold() // Make the header bold
-            .Add(name + "\n"); // Add name
-        Paragraph header2 = new Paragraph()
-            .SetFontSize(12) // Set font size for header
-            .Add(email + " | " + phone + " | " + city); // Add contact information
+        Paragraph header = new Paragraph();
+        header.Add(new Text(name + "\n")
+            .SetFontSize(16) // Set font size for header
+            .SetBold()); // Make the header bold
+        header.Add(new Text(email + " | " + phone + " | " + city).SetFontSize(10));
 
         // Add the header to the document
         document.Add(header);
-        document.Add(header2);
     }
 
     static void AddHeadline(Document document, string headline)
@@ -305,7 +310,7 @@ class Program
             if (experience.Context == contextName)
             {
                 totalString +=
-                    $"Job: {experience.Title} at {experience.Company} ({experience.Duration})\n Description: {experience.Description}";
+                    $"Job: {experience.Title} at {experience.Company} ({experience.Duration})\n Description: {string.Join(" ", experience.Description)}";
             }
         }
 
@@ -313,7 +318,7 @@ class Program
         {
             if (project.Context == contextName)
             {
-                totalString += $"Project: {project.Name}. Description: ({project.Description})\n";
+                totalString += $"Project: {project.Name}. Description: ({string.Join(" ", project.Description)})\n";
             }
         }
 
@@ -352,6 +357,16 @@ class Program
         var newContextSummary = new ContextSummary();
         newContextSummary.ContextName = contextName;
         newContextSummary.ContextTotalText = totalString;
+
+        
+        string filePath = Path.Combine(Environment.CurrentDirectory, $"{contextName}.txt");
+
+        // Save the string to "beans.txt"
+        File.WriteAllText(filePath, totalString);
+
+        // Print the path to the console
+        Console.WriteLine("File saved at: " + filePath);
+        
         return newContextSummary;
     }
 
@@ -457,6 +472,46 @@ class Program
         }
     }
 
+    public static async Task<string> GetJobName(JobPost job)
+    {
+        var apiKey = LoadApiKey();
+        var endpoint = "https://api.openai.com/v1/chat/completions";
+
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+            var requestBody = new
+            {
+                model = modelToUse, // or "gpt-4" if you have access
+                messages = new[]
+                {
+                    new
+                    {
+                        role = "user",
+                        content =
+                            $"Give me a filename-friendly name of this job including the company name (if known, if not known or looks like an anonymous recruiter, then put anonymous for the company name) and the role (only one word including underscores. do not give me any other text/paragraphs):\n{job.Rawtext}"
+                    }
+                }
+            };
+
+            var json = JsonConvert.SerializeObject(requestBody);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(endpoint, content);
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<dynamic>(responseContent);
+                return result.choices[0].message.content.ToString();
+            }
+            else
+            {
+                throw new Exception($"Error calling OpenAI API: {response.ReasonPhrase}");
+            }
+        }
+    }
+
     public static async Task<string> StartFreshWithOpenAI(string newContext)
     {
         var apiKey = LoadApiKey();
@@ -496,89 +551,142 @@ class Program
         }
     }
 
-    public static async Task<List<string>> GetBulletPoints(ContextSummary context, JobPost job)
+    public static async Task<List<string>> GetBulletPoints(ContextSummary context, JobPost job, int number, bool current = false)
+{
+    var apiKey = LoadApiKey();
+    var endpoint = "https://api.openai.com/v1/chat/completions";
+
+    string tenseString = "make everything past tense, such as wrote or developed or designed.";
+    if (current)
     {
-        var apiKey = LoadApiKey();
-        var endpoint = "https://api.openai.com/v1/chat/completions";
+        tenseString = "make everything current tense, such as leading or developing or demonstrating or designed.";
+    }
 
-        using (var client = new HttpClient())
+    using (var client = new HttpClient())
+    {
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+        var requestBody = new
         {
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-
-            var requestBody = new
+            model = modelToUse, // or "gpt-4" if you have access
+            messages = new[]
             {
-                model = modelToUse, // or "gpt-4" if you have access
-                messages = new[]
+                new
                 {
-                    new
-                    {
-                        role = "user",
-                        content =
-                            $"Here is a job posting: {job.Rawtext}. Here is my experience at {context.ContextName} : {context.ContextTotalText}. 4 short bullet points about my experience at {context} that is relevant to the job posting. These bullet points should be appropriate for a resume. Return them as a simple json string array format without extra strcuture"
-                    }
-                }
-            };
+                    role = "user",
+                    content = $"Here is the job posting: {job.Rawtext}"
+                },
+                new
+                {
+                    role = "user",
+                    content = $"Here is my experience at {context.ContextName}: {context.ContextTotalText}. - Do not mix or confuse the job posting's requirements with my job experience. - Focus only on the experience and skills I provide in this message when generating bullet points.{number} short bullet points about my experience at {context} that is relevant to the job posting. without using any first-person pronouns like 'I' or 'we'. These bullet points should be appropriate for a resume. Remove in-text quotation marks, this throws off the program. Try to keep each bullet point either between 100-120 characters or 220-240 characters. Bullet points should end in punctuation like a period. {tenseString}. Highlight achievements in particular - sell the job on me. Return them as a simple JSON string array format without extra structure. - For reference, do not reference any experience requirements from the job posting when creating bullet points. Focus solely on my job description."
+                },
+            }
+        };
 
-            var json = JsonConvert.SerializeObject(requestBody);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var json = JsonConvert.SerializeObject(requestBody);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        int maxRetries = 5; // Maximum number of retries
+        int currentAttempt = 0;
+
+        while (currentAttempt < maxRetries)
+        {
+            currentAttempt++;
 
             var response = await client.PostAsync(endpoint, content);
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
                 var result = JsonConvert.DeserializeObject<dynamic>(responseContent);
-                return JsonConvert.DeserializeObject<List<string>>(result.choices[0].message.content.ToString());
+                string bulletPointsJson = result.choices[0].message.content.ToString();
+
+                try
+                {
+                    return JsonConvert.DeserializeObject<List<string>>(bulletPointsJson);
+                }
+                catch (JsonException ex)
+                {
+                    Console.WriteLine($"Deserialization error: {ex.Message}. Attempt {currentAttempt} of {maxRetries}.");
+                }
             }
             else
             {
-                throw new Exception($"Error calling OpenAI API: {response.ReasonPhrase}");
+                Console.WriteLine($"Error calling OpenAI API: {response.ReasonPhrase}. Attempt {currentAttempt} of {maxRetries}.");
             }
+
+            // Optionally, introduce a delay before retrying
+            await Task.Delay(1000); // Wait 1 second before the next attempt
         }
+
+        throw new Exception($"Failed to get bullet points after {maxRetries} attempts.");
     }
+}
+
 
     public static async Task<List<Skill>> GetRelevantSkills(Resume resume, JobPost job)
+{
+    var apiKey = LoadApiKey();
+    var endpoint = "https://api.openai.com/v1/chat/completions";
+
+    var skillsJson = GetSkillsJson(resume);
+
+    using (var client = new HttpClient())
     {
-        var apiKey = LoadApiKey();
-        var endpoint = "https://api.openai.com/v1/chat/completions";
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 
-        var skillsJson = GetSkillsJson(resume);
-
-        using (var client = new HttpClient())
+        var requestBody = new
         {
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-
-            var requestBody = new
+            model = modelToUse, // or "gpt-4" if you have access
+            messages = new[]
             {
-                model = modelToUse, // or "gpt-4" if you have access
-                messages = new[]
+                new
                 {
-                    new
-                    {
-                        role = "user",
-                        content =
-                            $"Here is a job posting: {job.Rawtext}. Here is my skills list in json format: {skillsJson}. Return back the same json but with skills both rearranged and possibly culled of unrelated skills for the job posting. Do not add any extra text/reasoning/explaination, the output is being sent directly to a json parser"
-                    }
+                    role = "user",
+                    content =
+                        $"Here is a job posting: {job.Rawtext}. Here is my skills list in json format: {skillsJson}. Return back the same json but with skills both rearranged. Do not cull skills, rearrange them by relevance. Remove in-text quotation marks, this throws off the program. Do not add any extra text/reasoning/explanation, the output is being sent directly to a json parser."
                 }
-            };
+            }
+        };
 
-            var json = JsonConvert.SerializeObject(requestBody);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var json = JsonConvert.SerializeObject(requestBody);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        int maxRetries = 5; // Maximum number of retries
+        int currentAttempt = 0;
+
+        while (currentAttempt < maxRetries)
+        {
+            currentAttempt++;
 
             var response = await client.PostAsync(endpoint, content);
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
                 var result = JsonConvert.DeserializeObject<dynamic>(responseContent);
-                Console.WriteLine(result.choices[0].message.content.ToString());
-                return JsonConvert.DeserializeObject<List<Skill>>(result.choices[0].message.content.ToString());
+                string skillsJsonResponse = result.choices[0].message.content.ToString();
+
+                try
+                {
+                    return JsonConvert.DeserializeObject<List<Skill>>(skillsJsonResponse);
+                }
+                catch (JsonException ex)
+                {
+                    Console.WriteLine($"Deserialization error: {ex.Message}. Attempt {currentAttempt} of {maxRetries}.");
+                }
             }
             else
             {
-                throw new Exception($"Error calling OpenAI API: {response.ReasonPhrase}");
+                Console.WriteLine($"Error calling OpenAI API: {response.ReasonPhrase}. Attempt {currentAttempt} of {maxRetries}.");
             }
-        }
-    }
 
+            // Optionally, introduce a delay before retrying
+            await Task.Delay(1000); // Wait 1 second before the next attempt
+        }
+
+        throw new Exception($"Failed to get relevant skills after {maxRetries} attempts.");
+    }
+}
     public static string GetSkillsJson(Resume resume)
     {
         // Check if the resume object is not null
