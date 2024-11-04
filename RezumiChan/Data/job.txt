@@ -1,1 +1,37 @@
-generic job
+Position: Embedded Systems Engineer
+
+Location: Austin, TX
+Company: Precision Embedded Solutions
+Job Type: Full-time
+
+About Us:
+Precision Embedded Solutions is a leader in developing specialized embedded systems for medical, automotive, and consumer electronics applications. We focus on providing robust, reliable, and high-performance solutions that meet the highest industry standards. Our process includes PCB design and manufacturing, ensuring that each product is optimized from concept to production.
+
+Role Overview:
+As an Embedded Systems Engineer, you’ll design, implement, and optimize embedded software and firmware while also contributing to PCB design and manufacturing processes. You will work closely with hardware engineers to integrate low-level software with custom hardware and ensure our systems perform reliably in real-world applications. In addition, you’ll play a role in Design for Manufacturability (DFM), ensuring our PCBs are production-ready.
+
+Key Responsibilities:
+
+    Firmware Development: Develop and optimize firmware in C/C++ for microcontrollers and embedded processors.
+    System Integration: Collaborate with hardware engineers to integrate firmware with sensors, actuators, and communication modules, ensuring seamless functionality.
+    PCB Design & DFM: Assist in PCB design, including layout and component selection, with an emphasis on DFM principles to ensure efficient and cost-effective manufacturing.
+    Testing & Debugging: Perform unit testing, debugging, and performance profiling to ensure software and hardware reliability and robustness.
+    Documentation & Compliance: Document firmware and PCB designs, maintain version control, and ensure adherence to industry standards and regulatory requirements.
+    Continuous Improvement: Analyze and improve system performance based on testing and customer feedback, driving enhancements in efficiency, stability, and manufacturability.
+
+Qualifications:
+
+    Required: 3+ years of experience in embedded systems programming, especially in C/C++
+    Preferred: Experience with microcontroller families (e.g., STM32, PIC, ESP32), familiarity with real-time operating systems (RTOS), and PCB design software (e.g., KiCAD, Altium Designer)
+    Knowledge of serial communication protocols (I2C, SPI, UART)
+    Familiarity with DFM principles and experience optimizing PCBs for manufacturability
+    Proficiency in version control systems like Git and embedded development tools (e.g., JTAG debuggers, oscilloscopes)
+    Understanding of low-power design and optimization techniques for embedded systems
+
+Benefits:
+
+    Comprehensive health, dental, and vision insurance
+    Generous PTO and flexible work hours
+    Professional development opportunities in an industry-leading company
+
+Join Precision Embedded Solutions today and help us build groundbreaking embedded systems from the ground up!

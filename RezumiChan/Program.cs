@@ -13,7 +13,7 @@ using iText.Layout.Element;
 class Program
 {
     //model options: "gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-4", "gpt-4-32k"
-    const string modelToUse = "gpt-3.5-turbo";
+    const string modelToUse = "gpt-4";
     private const int leftMargin = 10;
     private const bool aiEnabled = true; // used so I can generate PDFs without using up tokens.
 
@@ -60,46 +60,63 @@ class Program
 
         JobPost job = LoadJobPost(filePath);
 
-        var greySkiesContext = GetContextSummary("Grey Skies", resume, stories, portfolio);
-        var waveContext = GetContextSummary("Wave", resume, stories, portfolio);
-        var tcContext = GetContextSummary("Tender Claws", resume, stories, portfolio);
-        var battleBotsContext = GetContextSummary("BattleBots", resume, stories, portfolio);
+        //var greySkiesContext = GetContextSummary("Grey Skies", resume, stories, portfolio);
+        //var waveContext = GetContextSummary("Wave", resume, stories, portfolio);
+        //var tcContext = GetContextSummary("Tender Claws", resume, stories, portfolio);
+        //var battleBotsContext = GetContextSummary("BattleBots", resume, stories, portfolio);
 
-        List<string> tcBulletPoints = new List<string>();
-        List<string> waveBulletPoints= new List<string>();
-        List<string> bloodsportBulletPoints= new List<string>();
-        List<string> greyskiesBulletPoints= new List<string>();
+        filePath = "Data/tenderclaws_bank.json";
+        var tcBankJson = File.ReadAllText(filePath);
+        BulletpointBank tcBank = JsonConvert.DeserializeObject<BulletpointBank>(tcBankJson);
+        
+        filePath = "Data/wave_bank.json";
+        var waveBankJson = File.ReadAllText(filePath);
+        BulletpointBank waveBank = JsonConvert.DeserializeObject<BulletpointBank>(waveBankJson);
+        
+        filePath = "Data/bloodsport_bank.json";
+        var bloodsportBankJson = File.ReadAllText(filePath);
+        BulletpointBank bloodsportBank = JsonConvert.DeserializeObject<BulletpointBank>(bloodsportBankJson);
+        
+        filePath = "Data/greyskies_bank.json";
+        var greyskiesBankJson = File.ReadAllText(filePath);
+        BulletpointBank greyskiesBank = JsonConvert.DeserializeObject<BulletpointBank>(greyskiesBankJson);
+
+        
+        List<string> tcSelectedBulletPoints = new List<string>();
+        List<string> waveSelectedBulletPoints= new List<string>();
+        List<string> bloodsportSelectedBulletPoints= new List<string>();
+        List<string> greyskiesSelectedBulletPoints= new List<string>();
         List<Skill> skills= new List<Skill>();
 
         string filename = "riko_balakit_resume_";
 
         if (aiEnabled)
         {
-            tcBulletPoints = await GetBulletPoints(tcContext, job, 40, false);
-            waveBulletPoints = await GetBulletPoints(waveContext, job, 40, false);
-            bloodsportBulletPoints = await GetBulletPoints(battleBotsContext, job, 40, false);
-            greyskiesBulletPoints = await GetBulletPoints(greySkiesContext, job, 40, false);
+            tcSelectedBulletPoints = await GetBulletPointsFromBank(tcBank, job, 4, false);
+            waveSelectedBulletPoints = await GetBulletPointsFromBank(waveBank, job, 4, false);
+            bloodsportSelectedBulletPoints = await GetBulletPointsFromBank(bloodsportBank, job, 3, false);
+            greyskiesSelectedBulletPoints = await GetBulletPointsFromBank(greyskiesBank, job, 3, false);
             skills = await GetRelevantSkills(resume, job);
             filename += await GetJobName(job);
         }
         else
         {
-            tcBulletPoints.Add("Lead designer and engineer for VR game projects at Tender Claws, contributing to successful releases");
-            tcBulletPoints.Add("Developed and refined gameplay mechanics, solved urgent issues, and ensured smooth operation of games. ");
-            tcBulletPoints.Add("Owned and managed entire chapters of immersive VR experiences, delivering on time and without major issues. ");
-            tcBulletPoints.Add("Designed and implemented reusable game engines, showcasing adaptability and innovation in game development. ");
-            waveBulletPoints.Add("Led and managed the Resident DJ Program at Wave, increasing user engagement during downtime between headline concerts.");
-            waveBulletPoints.Add("Spearheaded the development of advanced DJ Deck feature at Wave, balancing management's desire for simplicity with hobbyist DJs' needs");
-            waveBulletPoints.Add("Advocated for social safety features at Wave, setting new standards for immersive social VR experiences.");
-            waveBulletPoints.Add("Successfully advocated for user-requested fixes and features at Wave, leading to increased user satisfaction and engagement");
-            bloodsportBulletPoints.Add("Led the development of a cutting-edge telemetry system for BattleBots contender, Bloodsport, ensuring real-time monitoring and broadcast of robot health.");
-            bloodsportBulletPoints.Add("Utilized KiCAD to custom-design electronics for overseas manufacturing and developed a live monitoring interface in Unity for cinematic display of data.");
-            bloodsportBulletPoints.Add("Successfully met high entertainment standards of BattleBots while providing crucial performance insights for live audiences and post-match analysis.");
-            bloodsportBulletPoints.Add("Demonstrated expertise in embedded systems, Unity, KiCAD, and C++, delivering a visually striking telemetry UI that enhanced entertainment value.");
-            greyskiesBulletPoints.Add("Designed innovative combat robots like Data Collector and Two Factor Annihilation, showcasing technical prowess and competitive edge.");
-            greyskiesBulletPoints.Add("Utilized advanced electronics and firmware to create semi-autonomous controls for combat robots, demonstrating viability in a competitive environment.");
-            greyskiesBulletPoints.Add("Integrated Steam Deck as primary controller for combat robot, enabling live telemetry viewing, real-time logging, and on-the-fly settings adjustments, impressing robot combat community.");
-            greyskiesBulletPoints.Add("Designed and sold breakout board for Arduino Nano to simplify ESC reprogramming process, generating revenue and increasing efficiency for robot builders.");
+            tcSelectedBulletPoints.Add("Lead designer and engineer for VR game projects at Tender Claws, contributing to successful releases");
+            tcSelectedBulletPoints.Add("Developed and refined gameplay mechanics, solved urgent issues, and ensured smooth operation of games. ");
+            tcSelectedBulletPoints.Add("Owned and managed entire chapters of immersive VR experiences, delivering on time and without major issues. ");
+            tcSelectedBulletPoints.Add("Designed and implemented reusable game engines, showcasing adaptability and innovation in game development. ");
+            waveSelectedBulletPoints.Add("Led and managed the Resident DJ Program at Wave, increasing user engagement during downtime between headline concerts.");
+            waveSelectedBulletPoints.Add("Spearheaded the development of advanced DJ Deck feature at Wave, balancing management's desire for simplicity with hobbyist DJs' needs");
+            waveSelectedBulletPoints.Add("Advocated for social safety features at Wave, setting new standards for immersive social VR experiences.");
+            waveSelectedBulletPoints.Add("Successfully advocated for user-requested fixes and features at Wave, leading to increased user satisfaction and engagement");
+            bloodsportSelectedBulletPoints.Add("Led the development of a cutting-edge telemetry system for BattleBots contender, Bloodsport, ensuring real-time monitoring and broadcast of robot health.");
+            bloodsportSelectedBulletPoints.Add("Utilized KiCAD to custom-design electronics for overseas manufacturing and developed a live monitoring interface in Unity for cinematic display of data.");
+            bloodsportSelectedBulletPoints.Add("Successfully met high entertainment standards of BattleBots while providing crucial performance insights for live audiences and post-match analysis.");
+            bloodsportSelectedBulletPoints.Add("Demonstrated expertise in embedded systems, Unity, KiCAD, and C++, delivering a visually striking telemetry UI that enhanced entertainment value.");
+            greyskiesSelectedBulletPoints.Add("Designed innovative combat robots like Data Collector and Two Factor Annihilation, showcasing technical prowess and competitive edge.");
+            greyskiesSelectedBulletPoints.Add("Utilized advanced electronics and firmware to create semi-autonomous controls for combat robots, demonstrating viability in a competitive environment.");
+            greyskiesSelectedBulletPoints.Add("Integrated Steam Deck as primary controller for combat robot, enabling live telemetry viewing, real-time logging, and on-the-fly settings adjustments, impressing robot combat community.");
+            greyskiesSelectedBulletPoints.Add("Designed and sold breakout board for Arduino Nano to simplify ESC reprogramming process, generating revenue and increasing efficiency for robot builders.");
             var sdSkill = new Skill("Software Development", new[] { "Unreal", "Unity", "Virtual Reality", "Augmented Reality", "Netcode", "Databases" });
             var programmingSkill = new Skill("Programming Languages", new[] { "C#", "C++", "C", "JavaScript", "Python" });
             var designSkill = new Skill("Design Tools", new[] { "Photoshop" });
@@ -133,12 +150,12 @@ class Program
                 AddSkillsSection(document, skills);
                 AddDivider(document, "Work Experience");
                 AddWorkSection(document, "Tender Claws", "Game Developer", "Los Angeles, CA (Remote)",
-                    "February 2021 - August 2024", tcBulletPoints);
+                    "February 2021 - August 2024", tcSelectedBulletPoints);
                 AddWorkSection(document, "Wave (Formerly TheWaveVR)", "Engineer", "Austin, TX",
-                    "February 2017 - November 2020", waveBulletPoints);
+                    "February 2017 - November 2020", waveSelectedBulletPoints);
                 AddDivider(document, "Projects");
-                AddProjectSection(document, "BattleBots - Bloodsport", bloodsportBulletPoints);
-                AddProjectSection(document, "Grey Skies Automation", greyskiesBulletPoints);
+                AddProjectSection(document, "BattleBots - Bloodsport", bloodsportSelectedBulletPoints);
+                AddProjectSection(document, "Grey Skies Automation", greyskiesSelectedBulletPoints);
 
 
                 AddEducationSection(document, resume);
@@ -551,142 +568,227 @@ class Program
         }
     }
 
-    public static async Task<List<string>> GetBulletPoints(ContextSummary context, JobPost job, int number, bool current = false)
-{
-    var apiKey = LoadApiKey();
-    var endpoint = "https://api.openai.com/v1/chat/completions";
-
-    string tenseString = "make everything past tense, such as wrote or developed or designed.";
-    if (current)
+    public static async Task<List<string>> GetBulletPointsFromBank(BulletpointBank bank, JobPost job, int number,
+        bool current = false)
     {
-        tenseString = "make everything current tense, such as leading or developing or demonstrating or designed.";
-    }
+        StringBuilder sb = new StringBuilder();
 
-    using (var client = new HttpClient())
-    {
-        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-
-        var requestBody = new
+        foreach (var bulletpoint in bank.Bulletpoints)
         {
-            model = modelToUse, // or "gpt-4" if you have access
-            messages = new[]
-            {
-                new
-                {
-                    role = "user",
-                    content = $"Here is the job posting: {job.Rawtext}"
-                },
-                new
-                {
-                    role = "user",
-                    content = $"Here is my experience at {context.ContextName}: {context.ContextTotalText}. - Do not mix or confuse the job posting's requirements with my job experience. - Focus only on the experience and skills I provide in this message when generating bullet points.{number} short bullet points about my experience at {context} that is relevant to the job posting. without using any first-person pronouns like 'I' or 'we'. These bullet points should be appropriate for a resume. Remove in-text quotation marks, this throws off the program. Try to keep each bullet point either between 100-120 characters or 220-240 characters. Bullet points should end in punctuation like a period. {tenseString}. Highlight achievements in particular - sell the job on me. Return them as a simple JSON string array format without extra structure. - For reference, do not reference any experience requirements from the job posting when creating bullet points. Focus solely on my job description."
-                },
-            }
-        };
-
-        var json = JsonConvert.SerializeObject(requestBody);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-        int maxRetries = 5; // Maximum number of retries
-        int currentAttempt = 0;
-
-        while (currentAttempt < maxRetries)
-        {
-            currentAttempt++;
-
-            var response = await client.PostAsync(endpoint, content);
-            if (response.IsSuccessStatusCode)
-            {
-                var responseContent = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<dynamic>(responseContent);
-                string bulletPointsJson = result.choices[0].message.content.ToString();
-
-                try
-                {
-                    return JsonConvert.DeserializeObject<List<string>>(bulletPointsJson);
-                }
-                catch (JsonException ex)
-                {
-                    Console.WriteLine($"Deserialization error: {ex.Message}. Attempt {currentAttempt} of {maxRetries}.");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Error calling OpenAI API: {response.ReasonPhrase}. Attempt {currentAttempt} of {maxRetries}.");
-            }
-
-            // Optionally, introduce a delay before retrying
-            await Task.Delay(1000); // Wait 1 second before the next attempt
+            sb.AppendLine($"{bulletpoint.ID}) {bulletpoint.BulletpointText}");
+            sb.AppendLine();
         }
 
-        throw new Exception($"Failed to get bullet points after {maxRetries} attempts.");
+        //Console.WriteLine(sb.ToString().Trim());
+        
+        var apiKey = LoadApiKey();
+        var endpoint = "https://api.openai.com/v1/chat/completions";
+        
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+            var requestBody = new
+            {
+                model = modelToUse, // or "gpt-4" if you have access
+                messages = new[]
+                {
+                    new
+                    {
+                        role = "user",
+                        content = $"Here is the job posting: {job.Rawtext}. Here is a bank of bullet points from a job or project I have done. Return the top {number} most relevant to that job description bullet points in JSON format, using only the bullet point numbers. Do not include any addictional text, explainations, or preambles- only return the JSON format. Desired output format: "+@"{""relevant_bullet_points"":[]}"
+                    },
+                }
+            };
+
+            var json = JsonConvert.SerializeObject(requestBody);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            int maxRetries = 5; // Maximum number of retries
+            int currentAttempt = 0;
+
+            while (currentAttempt < maxRetries)
+            {
+                currentAttempt++;
+
+                var response = await client.PostAsync(endpoint, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<dynamic>(responseContent);
+                    string bulletPointsJson = result.choices[0].message.content.ToString();
+
+                    Console.WriteLine($"bulletPointsJson: {bulletPointsJson}");
+                    
+                    try
+                    {
+                        var deserializedResponse = JsonConvert.DeserializeObject<RelevantBulletPointsResponse>(bulletPointsJson);
+                        var listOfPointNumbers = deserializedResponse.RelevantBulletPoints;
+
+                        if (listOfPointNumbers.Count != number)
+                        {
+                            // throw an error to force a retry
+                            throw new InvalidOperationException("The count of listOfPointNumbers does not match the expected number.");
+                        }
+
+                        return bank.GetBulletpointTextsByIds(listOfPointNumbers);
+                    }
+                    catch (JsonException ex)
+                    {
+                        Console.WriteLine($"Deserialization error: {ex.Message}. Attempt {currentAttempt} of {maxRetries}.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Error calling OpenAI API: {response.ReasonPhrase}. Attempt {currentAttempt} of {maxRetries}.");
+                }
+
+                // Optionally, introduce a delay before retrying
+                await Task.Delay(1000); // Wait 1 second before the next attempt
+            }
+
+            throw new Exception($"Failed to get bullet points after {maxRetries} attempts.");
+        }
     }
-}
+    
+
+
+    public static async Task<List<string>> GetBulletPoints(ContextSummary context, JobPost job, int number, bool current = false)
+    {
+        var apiKey = LoadApiKey();
+        var endpoint = "https://api.openai.com/v1/chat/completions";
+
+        string tenseString = "make everything past tense, such as wrote or developed or designed.";
+        if (current)
+        {
+            tenseString = "make everything current tense, such as leading or developing or demonstrating or designed.";
+        }
+
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+            var requestBody = new
+            {
+                model = modelToUse, // or "gpt-4" if you have access
+                messages = new[]
+                {
+                    new
+                    {
+                        role = "user",
+                        content = $"Here is the job posting: {job.Rawtext}"
+                    },
+                    new
+                    {
+                        role = "user",
+                        content = $"Here is my experience at {context.ContextName}: {context.ContextTotalText}. - Do not mix or confuse the job posting's requirements with my job experience. - Focus only on the experience and skills I provide in this message when generating bullet points.{number} short bullet points about my experience at {context} that is relevant to the job posting. without using any first-person pronouns like 'I' or 'we'. These bullet points should be appropriate for a resume. Remove in-text quotation marks, this throws off the program. Try to keep each bullet point either between 100-120 characters or 220-240 characters. Bullet points should end in punctuation like a period. {tenseString}. Highlight achievements in particular - sell the job on me. Return them as a simple JSON string array format without extra structure. - For reference, do not reference any experience requirements from the job posting when creating bullet points. Focus solely on my job description."
+                    },
+                }
+            };
+
+            var json = JsonConvert.SerializeObject(requestBody);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            int maxRetries = 5; // Maximum number of retries
+            int currentAttempt = 0;
+
+            while (currentAttempt < maxRetries)
+            {
+                currentAttempt++;
+
+                var response = await client.PostAsync(endpoint, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<dynamic>(responseContent);
+                    string bulletPointsJson = result.choices[0].message.content.ToString();
+
+                    try
+                    {
+                        return JsonConvert.DeserializeObject<List<string>>(bulletPointsJson);
+                    }
+                    catch (JsonException ex)
+                    {
+                        Console.WriteLine($"Deserialization error: {ex.Message}. Attempt {currentAttempt} of {maxRetries}.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Error calling OpenAI API: {response.ReasonPhrase}. Attempt {currentAttempt} of {maxRetries}.");
+                }
+
+                // Optionally, introduce a delay before retrying
+                await Task.Delay(1000); // Wait 1 second before the next attempt
+            }
+
+            throw new Exception($"Failed to get bullet points after {maxRetries} attempts.");
+        }
+    }
 
 
     public static async Task<List<Skill>> GetRelevantSkills(Resume resume, JobPost job)
-{
-    var apiKey = LoadApiKey();
-    var endpoint = "https://api.openai.com/v1/chat/completions";
-
-    var skillsJson = GetSkillsJson(resume);
-
-    using (var client = new HttpClient())
     {
-        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+        var apiKey = LoadApiKey();
+        var endpoint = "https://api.openai.com/v1/chat/completions";
 
-        var requestBody = new
+        var skillsJson = GetSkillsJson(resume);
+
+        using (var client = new HttpClient())
         {
-            model = modelToUse, // or "gpt-4" if you have access
-            messages = new[]
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+            var requestBody = new
             {
-                new
+                model = modelToUse, // or "gpt-4" if you have access
+                messages = new[]
                 {
-                    role = "user",
-                    content =
-                        $"Here is a job posting: {job.Rawtext}. Here is my skills list in json format: {skillsJson}. Return back the same json but with skills both rearranged. Do not cull skills, rearrange them by relevance. Remove in-text quotation marks, this throws off the program. Do not add any extra text/reasoning/explanation, the output is being sent directly to a json parser."
+                    new
+                    {
+                        role = "user",
+                        content =
+                            $"Here is a job posting: {job.Rawtext}. Here is my skills list in json format: {skillsJson}. Return back the same json but with skills both rearranged. Do not cull skills, rearrange them by relevance. Remove in-text quotation marks, this throws off the program. Do not add any extra text/reasoning/explanation, the output is being sent directly to a json parser."
+                    }
                 }
-            }
-        };
+            };
 
-        var json = JsonConvert.SerializeObject(requestBody);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var json = JsonConvert.SerializeObject(requestBody);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-        int maxRetries = 5; // Maximum number of retries
-        int currentAttempt = 0;
+            int maxRetries = 5; // Maximum number of retries
+            int currentAttempt = 0;
 
-        while (currentAttempt < maxRetries)
-        {
-            currentAttempt++;
-
-            var response = await client.PostAsync(endpoint, content);
-            if (response.IsSuccessStatusCode)
+            while (currentAttempt < maxRetries)
             {
-                var responseContent = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<dynamic>(responseContent);
-                string skillsJsonResponse = result.choices[0].message.content.ToString();
+                currentAttempt++;
 
-                try
+                var response = await client.PostAsync(endpoint, content);
+                if (response.IsSuccessStatusCode)
                 {
-                    return JsonConvert.DeserializeObject<List<Skill>>(skillsJsonResponse);
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<dynamic>(responseContent);
+                    string skillsJsonResponse = result.choices[0].message.content.ToString();
+
+                    try
+                    {
+                        return JsonConvert.DeserializeObject<List<Skill>>(skillsJsonResponse);
+                    }
+                    catch (JsonException ex)
+                    {
+                        Console.WriteLine($"Deserialization error: {ex.Message}. Attempt {currentAttempt} of {maxRetries}.");
+                    }
                 }
-                catch (JsonException ex)
+                else
                 {
-                    Console.WriteLine($"Deserialization error: {ex.Message}. Attempt {currentAttempt} of {maxRetries}.");
+                    Console.WriteLine($"Error calling OpenAI API: {response.ReasonPhrase}. Attempt {currentAttempt} of {maxRetries}.");
                 }
-            }
-            else
-            {
-                Console.WriteLine($"Error calling OpenAI API: {response.ReasonPhrase}. Attempt {currentAttempt} of {maxRetries}.");
+
+                // Optionally, introduce a delay before retrying
+                await Task.Delay(1000); // Wait 1 second before the next attempt
             }
 
-            // Optionally, introduce a delay before retrying
-            await Task.Delay(1000); // Wait 1 second before the next attempt
+            throw new Exception($"Failed to get relevant skills after {maxRetries} attempts.");
         }
-
-        throw new Exception($"Failed to get relevant skills after {maxRetries} attempts.");
     }
-}
     public static string GetSkillsJson(Resume resume)
     {
         // Check if the resume object is not null
