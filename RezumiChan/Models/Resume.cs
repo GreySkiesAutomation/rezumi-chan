@@ -33,17 +33,37 @@ public class Project
 {
     public string Name { get; set; }
     public string Context { get; set; }
+    public string Title { get; set; }
     public List<string> Description { get; set; } // List of bullet points for project descriptions
 }
 
 public class Skill
 {
-    public Skill(string categoryName, string[] skills)
+    public Skill(string categoryName, string[] skills, string[] topSkills)
     {
         Category = categoryName;
-        Skills = skills.ToList();
+        if (skills == null)
+        {
+            Skills = new List<string>();
+        }
+        else
+        {
+            Skills = skills.ToList();
+        }
+
+
+        if (topSkills == null)
+        {
+            TopSkills = new List<string>();
+        }
+        else
+        {
+            TopSkills = topSkills.ToList();
+        }
     }
+
     public string Category { get; set; }
+    public List<string> TopSkills { get; set; } // List of skills under this category
     public List<string> Skills { get; set; } // List of skills under this category
 }
 

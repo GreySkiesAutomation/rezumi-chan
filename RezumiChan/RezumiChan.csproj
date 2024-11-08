@@ -34,25 +34,18 @@
       <None Update="Data\job.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Data\bloodsport_bank.json">
+      <None Update="Data\Bulletpoints\tenderclaws_bank.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Data\greyskies_bank.json">
+      <None Update="Data\Bulletpoints\wave_bank.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Data\tenderclaws_bank.json">
+      <None Update="Data\Bulletpoints\greyskies_bank.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Data\wave_bank.json">
+      <None Update="Data\Bulletpoints\bloodsport_bank.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-    </ItemGroup>
-
-
-
-
-    <ItemGroup>
-      <Folder Include="Data\Bulletpoints\" />
     </ItemGroup>
 
 

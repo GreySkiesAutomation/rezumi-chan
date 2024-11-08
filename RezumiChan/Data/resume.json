@@ -36,6 +36,7 @@
     {
       "name": "Grey Skies Automation",
       "context": "Grey Skies",
+      "title": "Founder, Owner, Operator",
       "description": [
         "Solo designer, builder, and driver of sport combat robots, competing across the country.",
         "3 lb class and smaller custom designs featuring 3D printing, laser cut, and CNC milled parts, as well as custom designed electronics hardware and firmware.",
@@ -45,6 +46,7 @@
     {
       "name": "Bloodsport",
       "context": "BattleBots",
+      "title": "Telemetry Specialist",
       "description": [
         "Teammember and telemetry specialist on Team Bloodsport on the television show BattleBots.",
         "Designed and implemented custom electronics, firmware, and software with cinematic-style UI."
@@ -62,22 +64,37 @@
   "skills": [
     {
       "category": "Software Development",
+      "topskills": [
+        "Unity"
+      ],
       "skills": [
-        "Unity",
         "Unreal",
-        "Virtual Reality (SteamVR, Meta Quest, Meta Rift, Windows Mixed Reality)",
-        "Augmented Reality (Meta Quest, Magic Leap)",
+        "Virtual Reality (SteamVR, Meta Quest & Rift)",
+        "Augmented Reality",
         "Motion Capture",
         "Netcode",
         "Databases (MySQL, SQLite, MongoDB)",
-        "MIDI"
+      ]
+    },
+    {
+      "category": "AI & Machine Learning",
+      "topskills": [
+      ],
+      "skills": [
+        "Natural Language Processing",
+        "Prompt Engineering",
+        "Generative AI",
+        "OpenAI/ChatGPT",
+        "Huggingface"
       ]
     },
     {
       "category": "Programming Languages",
-      "skills": [
+      "topskills": [
         "C#",
-        "C++ ",
+        "C++"
+      ],
+      "skills": [
         "C",
         "JavaScript",
         "Python",
@@ -88,6 +105,8 @@
     },
     {
       "category": "Design Tools",
+      "topskills": [
+      ],
       "skills": [
         "SolidWorks",
         "Fusion 360",
@@ -97,18 +116,18 @@
     },
     {
       "category": "Prototyping and Manufacturing",
+      "topskills": [
+      ],
       "skills": [
-        "3D printing (Slicing, Operation, Troubleshooting, Repair)",
-        "PCB Design",
-        "PCB Assembly (THT & SMT)",
-        "CNC Machining",
-        "Manual Machining",
-        "Woodworking",
-        "Laser Engraving & Cutting"
+        "3D Printing",
+        "PCB Design & Assembly",
+        "CNC Machining"
       ]
     },
     {
       "category": "Embedded Systems",
+      "topskills": [
+      ],
       "skills": [
         "Microcontrollers (Arduino, Teensy, ESP32, STM32)",
         "Wireless Communication (Bluetooth, BLE, LoRa)"
@@ -116,6 +135,8 @@
     },
     {
       "category": "Collaboration Tools",
+      "topskills": [
+      ],
       "skills": [
         "Perforce",
         "Git",
@@ -124,7 +145,7 @@
         "Asana",
         "Trello",
         "Confluence",
-        "Google Office"
+        "Google Workspace"
       ]
     }
   ],

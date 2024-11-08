@@ -8,13 +8,13 @@ using System.Linq;
 public class Bulletpoint
 {
     [JsonProperty("ID")] public int ID { get; set; }
-
     [JsonProperty("bulletpoint")] public string BulletpointText { get; set; }
 }
 
 public class BulletpointBank
 {
     [JsonProperty("bulletpoints")] public List<Bulletpoint> Bulletpoints { get; set; }
+    [JsonProperty("requiredbulletpoints")] public List<Bulletpoint>  RequiredBulletpoints { get; set; }
 
     public List<string> GetBulletpointTextsByIds(List<int> ids)
     {
@@ -34,5 +34,27 @@ public class BulletpointBank
         }
 
         return bulletpointTexts;
+    }
+
+    public bool ValidateBulletpointNumbers(List<int> ids)
+    {
+        foreach (var id in ids)
+        {
+            bool idFound = false;
+            foreach (var bulletpoint in Bulletpoints)
+            {
+                if (bulletpoint.ID == id)
+                {
+                    idFound = true;
+                }
+            }
+
+            if (!idFound)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

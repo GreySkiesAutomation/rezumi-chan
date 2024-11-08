@@ -1,0 +1,34 @@
+{
+  "requiredbulletpoints": [
+    {
+      "ID": 1,
+      "bulletpoint": "Designer, builder, and driver of sport combat robots, as well as shop owner for robotics and electronics tools and components."
+    }
+  ],
+  "bulletpoints": [
+    {
+      "ID": 2,
+      "bulletpoint": "Developed a robot named Two Factor Annihilation with Steam Deck integration for real-time telemetry and control, achieving 2nd place at debut, impressing robot combat enthusiasts."
+    },
+    {
+      "ID": 4,
+      "bulletpoint": "Pioneered semi-autonomous combat robotics with advanced sensor feedback, proving viability of 'smart' controls in live events. Integrated adaptive controls that modify based on sustained damage, keeping performance optimal mid-battle."
+    },
+    {
+      "ID": 5,
+      "bulletpoint": "Integrated real-time 3D orientation views and audio impact feedback via Steam Deck, enhancing combat robots’ performance monitoring, earning recognition and a feature interview in a major robotics channel"
+    },
+    {
+      "ID": 6,
+      "bulletpoint": "Achieved efficient combat robot fabrication by managing CNC, laser-cut, and 3D-printed parts with advanced materials like carbon fiber nylon, UHMWPE, titanium, and AR500 steel."
+    },
+    {
+      "ID": 7,
+      "bulletpoint": "Increased ESC reprogramming efficiency with a custom breakout board, reducing setup complexity and improving usability in the robotics community, adopted by major robotics shops, generating thousands of dollars revenue and community acclaim."
+    },
+    {
+      "ID": 8,
+      "bulletpoint": "Started the Grey Skies Automation shop to meet demand for custom robot parts/tools initially designed for personal projects, resulting in thousands in sales and expanded distribution to additional sites."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "requiredbulletpoints": [
+    {
+      "ID": 1,
+      "bulletpoint": "Drove development as a generalist engineer, crafting major features in the Unity-based client app and supporting backend."
+    }
+  ],
+  "bulletpoints": [
+    {
+      "ID": 1,
+      "bulletpoint": "Architected and shipped the DJ Deck performance tools, balancing accessibility with depth for hobbyist DJs, increasing user engagement and satisfaction."
+    },
+    {
+      "ID": 2,
+      "bulletpoint": "Founded and led Wave's Resident DJ Program, elevating user-generated content and boosting community engagement during downtime between major events."
+    },
+    {
+      "ID": 3,
+      "bulletpoint": "Designed and implemented WaveMaker venue tool, empowering users to create custom virtual venues, enhancing platform customization."
+    },
+    {
+      "ID": 4,
+      "bulletpoint": "Collaborated with headline artists (John Legend, Imogen Heap) to bring unique VR concert experiences to Wave, strengthening brand prestige and reach."
+    },
+    {
+      "ID": 5,
+      "bulletpoint": "Conducted in-depth research on VR social safety standards and developed social safety features for Wave VR, setting new standards for user safety, leading to improved community feedback and retention."
+    },
+    {
+      "ID": 6,
+      "bulletpoint": "Significantly contributed to exploratory project to port VR content to Roblox, enabling Wave to expand into new markets and user demographics."
+    },
+    {
+      "ID": 7,
+      "bulletpoint": "Managed Wave's social channels, growing brand visibility through interactive campaigns, memes, and professional user engagement. Identified critical user needs through community data analysis, advocating for impactful feature prioritization."
+    },
+    {
+      "ID": 8,
+      "bulletpoint": "Advocated for critical user-requested features as the community manager, resulting in prioritized development that boosted user satisfaction and platform loyalty."
+    },
+    {
+      "ID": 9,
+      "bulletpoint": "Analyzed community feedback across social platforms, leading to optimized features that met evolving user expectations."
+    }
+  ]
+}
