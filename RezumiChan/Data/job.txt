@@ -1,45 +1,59 @@
- About the job
 
-This Roles Area of Focus: C++ Unreal Engine Developer - Robotics Systems & Simulation
+About the job
 
-Company Overview
+Senior Hardware Engineer - Robotics R&D
 
-Allen Control Systems (ACS) is a cutting-edge defense startup, founded by two ex-Navy electrical engineers with a proven track record in robotics and software. We are developing a small, autonomous gun turret that employs advanced computer vision and control systems to precisely target and neutralize small drones and loitering munitions. Our innovative approach requires overcoming significant technical challenges, making this an exciting and dynamic environment for experienced engineers.
+Austin, Texas
 
-With an engineering-first culture, ACS values technical excellence and innovation. Backed by our founders' successful exit from a previous venture acquired for over $100M in 2022, we are committed to ensuring that the groundbreaking technologies we develop will have a real-world impact.
-
-Position Overview
-
-We are seeking two highly experienced game developers with expertise in Unreal Engine. These roles will focus on the development of real-time simulations, rendering, and 3D modeling for our autonomous defense systems. Candidates with deep experience in either Rendering/Art/3D Modeling/Shaders or C++ Unreal Engine development are encouraged to apply.
-
-What You'll Do
-
-    Lead the development and integration of real-time systems in Unreal Engine for our defense simulation projects.
-    Implement and optimize high-performance code in C++ to ensure smooth and responsive simulations under constrained hardware conditions.
-    Work closely with the electrical engineering and machine learning teams to integrate real-world data and control systems into Unreal simulations via AirSim.
-    Conduct extensive testing, debugging, and optimization to ensure reliable and efficient system performance.
-    Mentor junior engineers and contribute to the growth of Unreal Engine and C++ development expertise within the company.
-
-What You'll Need
-
-    Strong passion for building high-performance real-time systems using C++ and Unreal Engine.
-    Bachelor's or Master's degree in Computer Science, Software Engineering, or a related field.
-    Minimum 2 years of experience with Unreal Engine and possess strong C++ development skills.
-    Direct experience working with AirSim and are familiar with integrating simulations with real-world autonomous systems is a plus
-    Proficient in debugging, profiling, and optimizing C++ code for real-time applications.
-    Familarity with networking, multiplayer systems, or parallel processing in Unreal Engine environments.
-    You enjoy working closely with engineers from various disciplines to solve complex technical challenges.
-    Experience in Robotics systems is a plus
-    Unreal Engine C++ Plugin Development experience
-
-What We Offer
-
-    Competitive salary
-    ACS Equity Package
-    Health, Dental, Vision Insurance
-    Paid Time Off
-
-Allen Control Systems is an Equal Opportunity Employer, providing equal employment opportunities to all employees and applicants for employment. Allen Control Systems prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws.
+Unrivalled Package + Equity
 
 
-here is my cover letter
+Our client, a leading Austin-based technology company is looking for an experienced Senior R&D Hardware Engineer. This permanent role offers a hybrid work schedule with an immediate start.
+
+
+Role Overview:
+
+
+    Spearhead the development of an advanced multi-finger robotic hand through multiple fast-paced design iterations.
+    Engage in high-level decisions concerning the architecture and design of the robotic hand.
+    Apply analytical approaches, such as mathematical modeling and simulations, to design, refine, and optimize cutting-edge robotic hands.
+    Oversee the entire process from concept creation, CAD modeling, analysis, documentation, to validation, ensuring technical viability and market readiness.
+    Develop and test mechanical subsystems of the hand to evaluate the feasibility of concepts.
+
+
+Skills and Qualifications:
+
+
+    Proficient in 3D CAD software for creating intricate part geometries.
+    Experienced in designing and constructing prototype hardware.
+    Skilled in simulation and analysis tools (e.g., FEA, MATLAB).
+    Knowledgeable in miniature actuators and drivetrains, both linear and rotary.
+    Familiar with fingertip sensing technologies.
+    Adept at integrating electromechanical components, including sensors, motors, motor drivers, wiring, and communication systems.
+    Experienced in designing complex, highly articulated robotic systems.
+    Well-versed in the latest developments in dexterous robotic manipulation.
+
+
+Education and Experience:
+
+
+    Bachelor’s or Master’s degree in Mechanical, Biomechanical, Robotics, Mechatronics, or a related field.
+    Over 5 years of experience in Mechanical Engineering, with a focus on solving intricate electro-mechanical challenges.
+    Proven track record of delivering sophisticated electromechanical systems, such as robots, industrial automation equipment, or related systems combining actuation, motion control, custom sensor integration, and electronics.
+    Experience in rapid prototyping and fabrication techniques, including CNC/manual machining, welding, laser cutting, and additive manufacturing.
+
+
+Rewards:
+
+
+    Unrivalled Package + Equity
+    Hybrid working (WFH 2 days per week)
+    Generous PTO
+    Excellent benefits
+    Equity
+
+
+Certus Recruitment Group is a well-established and experienced specialist consultancy providing sales, marketing, and IT recruitment services. We serve the technology sector across North America, the UK, Europe, and Australia.
+
+
+If you are ready to take your career to the next level and make a significant impact, apply now!

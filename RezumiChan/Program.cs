@@ -829,12 +829,22 @@ class Program
                     try
                     {
                         var newSkills = JsonConvert.DeserializeObject<List<Skill>>(skillsJsonResponse);
+
+                        if (newSkills.Count != resume.Skills.Count)
+                        {
+                            throw new InvalidOperationException("The number of deserialized skills does not match the expected count.");
+                        }
+                        
                         return newSkills;
                     }
                     catch (JsonException ex)
                     {
                         Console.WriteLine(
                             $"Deserialization error: {ex.Message}. Attempt {currentAttempt} of {maxRetries}.");
+                    }
+                    catch (InvalidOperationException ex)
+                    {
+                        Console.WriteLine($"Operation error: {ex.Message}");
                     }
                 }
                 else
