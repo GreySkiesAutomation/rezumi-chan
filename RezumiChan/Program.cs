@@ -61,6 +61,14 @@ class Program
         filePath = "Data/job.txt";
 
         JobPost job = LoadJobPost(filePath);
+        
+        
+        Console.WriteLine($"Determining job requirements...");
+        job.Summary = await GetJobSummary(job);
+        Console.WriteLine("Summary: " + job.Summary);
+        Console.WriteLine("Determining name of the job from the posting...");
+        job.JobNameAndTitle = await GetJobName(job);
+        Console.WriteLine("Job Name: " + job.JobNameAndTitle);
 
         //var greySkiesContext = GetContextSummary("Grey Skies", resume, stories, portfolio);
         //var waveContext = GetContextSummary("Wave", resume, stories, portfolio);
@@ -84,7 +92,7 @@ class Program
         BulletpointBank greyskiesBank = JsonConvert.DeserializeObject<BulletpointBank>(greyskiesBankJson);
 
         Console.WriteLine("Bulletpoint banks loaded");
-        
+
         List<string> tcSelectedBulletPoints = new List<string>();
         List<string> waveSelectedBulletPoints = new List<string>();
         List<string> bloodsportSelectedBulletPoints = new List<string>();
@@ -103,8 +111,7 @@ class Program
         greyskiesSelectedBulletPoints = await GetBulletPointsFromBank(greyskiesBank, job, 3, false);
         Console.WriteLine("Calculating most relevant skill order...");
         skills = await GetRelevantSkills(resume, job);
-        Console.WriteLine("Determining name of the job from the posting...");
-        filename += await GetJobName(job);
+        filename += job.JobNameAndTitle;
         Console.WriteLine("Building the resume PDF");
 
 
@@ -141,7 +148,7 @@ class Program
         }
 
         OpenPdf(pdfPath);
-        
+
         //var resumeText = ReadPdf(pdfPath);
         //await EvaluateResume(job, resumeText);
     }
@@ -156,6 +163,63 @@ class Program
 
         return formattedTimestamp;
     }
+
+    public static async Task<string> GetJobSummary(JobPost job)
+    {
+        var apiKey = LoadApiKey();
+        var endpoint = "https://api.openai.com/v1/chat/completions";
+
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+            var requestBody = new
+            {
+                model = modelToUseIntense, // or "gpt-4" if you have access
+                messages = new[]
+                {
+                    new
+                    {
+                        role = "user",
+                        content =
+                            $"Please provide a concise summary of the following job posting: {job.Rawtext}. Include the name of the company and the role/title. Summarize the following job posting, ensuring the summary includes every skill, skillset, requirement, and keyword mentioned. Also include what the job is about and the things you do on the job, and the products/services the company offers. Focus exclusively on job responsibilities, essential skills, qualifications, and experience requirements necessary for the role. Omit any information about benefits, compensation, equal opportunity statements, or other non-essential details. The summary should be clear, concise, and suitable for crafting a tailored resume or ATS optimization."
+                    }
+                }
+            };
+
+            var json = JsonConvert.SerializeObject(requestBody);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            int maxRetries = 5; // Maximum number of retries
+            int currentAttempt = 0;
+
+            while (currentAttempt < maxRetries)
+            {
+                currentAttempt++;
+
+                var response = await client.PostAsync(endpoint, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<dynamic>(responseContent);
+                    string jobSummary = result.choices[0].message.content.ToString();
+
+                    return jobSummary;
+                }
+                else
+                {
+                    Console.WriteLine(
+                        $"Error calling OpenAI API: {response.ReasonPhrase}. Attempt {currentAttempt} of {maxRetries}.");
+                }
+
+                // Optionally, introduce a delay before retrying
+                await Task.Delay(1000); // Wait 1 second before the next attempt
+            }
+
+            throw new Exception($"Failed to get job summary after {maxRetries} attempts.");
+        }
+    }
+
 
     private static void AddSkillsSection(Document document, List<Skill> skills, List<Skill> resumeSkills)
     {
@@ -178,7 +242,7 @@ class Program
                     }
                 }
             }
-            
+
             foreach (var singleSkill in skill.Skills)
             {
                 skillLine += $"{singleSkill}, ";
@@ -501,7 +565,7 @@ class Program
                     {
                         role = "user",
                         content =
-                            $"Give me a filename-friendly name of this job including the company name (if known, if not known or looks like an anonymous recruiter, then put anonymous for the company name) and the role (only one word including underscores. do not give me any other text/paragraphs):\n{job.Rawtext}"
+                            $"Give me a filename-friendly name of this job including the company name (if known, if not known or looks like an anonymous recruiter, then put anonymous for the company name) and the role (only one word including underscores. do not give me any other text/paragraphs):\n{job.Summary}"
                     }
                 }
             };
@@ -568,7 +632,6 @@ class Program
         var number = totalNumber;
         if (!aiEnabled)
         {
-            
             var examplePoints = new List<string>();
             int pointCounter = 0;
             foreach (var point in bank.RequiredBulletpoints)
@@ -607,7 +670,7 @@ class Program
         var apiKey = LoadApiKey();
         var endpoint = "https://api.openai.com/v1/chat/completions";
         string contentText =
-            $"Here is the job posting: {job.Rawtext}. Here is a bank of bullet points from a job or project I have done: {sb.ToString().Trim()}. Return the top {number} most relevant to that job description bullet points in JSON format, using only the bullet point numbers. Do not include any addictional text, explainations, or preambles- only return the JSON format. Desired output format: " +
+            $"Here is the job posting: {job.Summary}. Here is a bank of bullet points from a job or project I have done: {sb.ToString().Trim()}. Return the top {number} most relevant to that job description bullet points in JSON format, using only the bullet point numbers. Do not include any addictional text, explainations, or preambles- only return the JSON format. Desired output format: " +
             @"{""relevant_bullet_points"":[]}";
 
         //Console.WriteLine(contentText);
@@ -666,7 +729,7 @@ class Program
                             throw new InvalidOperationException(
                                 "the list of numbers includes nonexistent bulletpoints, bro wtf");
                         }
-                        
+
                         var returnPoints = new List<string>();
                         int pointCounter = 0;
                         foreach (var point in bank.RequiredBulletpoints)
@@ -731,7 +794,7 @@ class Program
                     new
                     {
                         role = "user",
-                        content = $"Here is the job posting: {job.Rawtext}"
+                        content = $"Here is the job posting: {job.Summary}"
                     },
                     new
                     {
@@ -804,7 +867,7 @@ class Program
                     {
                         role = "user",
                         content =
-                            $"Here is a job posting: {job.Rawtext}. Here is my skills list in json format: {skillsJson}. Return back the same json but with skills both rearranged. Do not cull any items in the skill list, rearrange them by relevance. Remove in-text quotation marks, this throws off the program. Do not add any extra text/reasoning/explanation, the output is being sent directly to a json parser."
+                            $"Here is a job posting: {job.Summary}. Here is my skills list in json format: {skillsJson}. Return back the same json but with skills both rearranged. Do not cull any items in the skill list, rearrange them by relevance. Remove in-text quotation marks, this throws off the program. Do not add any extra text/reasoning/explanation, the output is being sent directly to a json parser."
                     }
                 }
             };
@@ -832,9 +895,10 @@ class Program
 
                         if (newSkills.Count != resume.Skills.Count)
                         {
-                            throw new InvalidOperationException("The number of deserialized skills does not match the expected count.");
+                            throw new InvalidOperationException(
+                                "The number of deserialized skills does not match the expected count.");
                         }
-                        
+
                         return newSkills;
                     }
                     catch (JsonException ex)
@@ -875,14 +939,15 @@ class Program
         {
             skillsWithoutTopSkills.Add(new Skill(skillset.Category, skillset.Skills.ToArray(), null));
         }
+
         string skillsJson = JsonConvert.SerializeObject(skillsWithoutTopSkills, Formatting.Indented);
         return skillsJson;
     }
-    
+
     private static string ReadPdf(string pathToPdf)
     {
         StringBuilder resumeText = new StringBuilder();
-        
+
         using (PdfReader pdfReader = new PdfReader(pathToPdf))
         using (PdfDocument pdfDoc = new PdfDocument(pdfReader))
         {
@@ -892,10 +957,10 @@ class Program
                 resumeText.Append(PdfTextExtractor.GetTextFromPage(pdfDoc.GetPage(i)));
             }
         }
-        
+
         return resumeText.ToString();
     }
-    
+
     public static async Task<string> EvaluateResume(JobPost job, string resumeText)
     {
         var apiKey = LoadApiKey(); // Replace with a method that retrieves your OpenAI API key
@@ -920,7 +985,7 @@ class Program
                         role = "user",
                         content = $"Evaluate how well this resume matches the job description on a scale of 1 to 10, " +
                                   $"where 10 is a perfect match. Provide a one-sentence response with the score. " +
-                                  $"Job Description: {job.Rawtext}\nResume Text: {resumeText}"
+                                  $"Job Description: {job.Summary}\nResume Text: {resumeText}"
                     }
                 }
             };

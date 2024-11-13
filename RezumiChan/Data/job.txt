@@ -1,59 +1,80 @@
+Software Engineer
+Austin, TX, United States (Hybrid)
+Trending
+Job Description
 
-About the job
+Emerson - Test & Measurement is looking for engineers who are passionate about crafting, developing, and maintaining sophisticated software systems while delivering value to customers.  This position requires outstanding interpersonal skills, taking ownership over design decisions, collaboration with peers and customers alike, and a proficient understanding of how your work will be used by your customers. 
+ 
 
-Senior Hardware Engineer - Robotics R&D
+For This Role, You Will Need:
 
-Austin, Texas
+    Bachelors Degree in Computer Science, Computer Engineering or other related degree
+    Proficiency in programming languages such as C#, Python or LabVIEW
+    Experience with testing frameworks
+    Authorized to work in the United States now or in the future without sponsorship
 
-Unrivalled Package + Equity
+Preferred Qualifications that Set You Apart:
+
+    Prior internship or co-op
+    Strong written, verbal and presentation skills.
+    Customer focus
+    Innovative, out of the box thinker
+    A desire to work closely with hardware development teams to support complex hardware and software systems
+
+ 
+
+Our Offer To You:
+
+    Health Benefits
+    Retirement Plan
+    Paid Time Off 
+    A collaborative and innovative work environment that values creativity and growth.
+    Opportunities for professional development and career advancement.
+    The chance to be part of a team that is transforming industries with innovative technology.
+    We are an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.
+
+Note:  National Instruments does NOT petition for H-1B (H1-B transfer) and TN status for this position. 
+
+About Us 
+
+In 2023, Emerson acquired NI and introduced its new Test & Measurement business group. NI and Emerson share commitments to continuous innovation, operational perfection, and sustainability. In this new chapter, we’ll build on our legacy and leadership in software-connected, automated test and measurement systems. We remain passionate about investing in industry leading innovations, delivering differentiated solutions to our customers around the globe, and helping engineers solve the world’s toughest challenges.   
+
+Make Test Your Competitive Advantage  
+
+Engineers rely on test and measurement to ensure new technologies deliver the highest levels of safety, reliability, and functionality, while also meeting demand faster than ever. And as products become more and more sophisticated, they require a constant evolution of test and measurement technologies. That’s the work we do every day.  
+
+Our confirmed test automation technology delivers leading accuracy, efficiency, and reliability from the lab to the manufacturing floor and beyond. And with the industry’s most comprehensive software portfolio, modular hardware, systems, and services, our software-connected approach to test simplifies connecting systems and data to revolutionize how enterprises use test insights to drive product and business performance. 
+About Us
+
+WHY EMERSON 
+
+Our Commitment to Our People
+
+At Emerson, we are motivated by a spirit of collaboration that helps our diverse, multicultural teams across the world drive innovation that makes the world healthier, safer, smarter, and more sustainable. And we want you to join us in our bold aspiration.
+
+We have built an engaged community of inquisitive, dedicated people who thrive knowing they are welcomed, trusted, celebrated, and empowered to solve the world’s most complex problems — for our customers, our communities, and the planet. You’ll contribute to this vital work while further developing your skills through our award-winning employee development programs. We are a proud corporate citizen in every city where we operate and are committed to our people, our communities, and the world at large. We take this responsibility seriously and strive to make a positive impact through every endeavor.
+
+At Emerson, you’ll see firsthand that our people are at the center of everything we do. So, let’s go. Let’s think differently. Learn, collaborate, and grow. Seek opportunity. Push boundaries. Be empowered to make things better. Speed up to break through. Let’s go, together.
+
+Work Authorization
+
+Emerson will only employ those who are legally authorized to work in the United States. This is not a position for which sponsorship will be provided. Individuals with temporary visas such as E, F-1(including those with OPT or CPT) , H-1, H-2, L-1, B, J or TN, or who need sponsorship for work authorization now or in the future, are not eligible for hire.
+
+Equal Opportunity Employer
+
+Emerson is an Equal Opportunity/Affirmative Action employer. All qualified applicants will receive consideration for employment without regard to sex, race, color, religion, national origin, age, marital status, political affiliation, sexual orientation, gender identity, genetic information, disability or protected veteran status. We are committed to providing a workplace free of any discrimination or harassment.
+
+Accessibility Assistance or Accommodation
+
+If you have a disability and are having difficulty accessing or using this website to apply for a position, please contact: idisability.administrator@emerson.com.   
 
 
-Our client, a leading Austin-based technology company is looking for an experienced Senior R&D Hardware Engineer. This permanent role offers a hybrid work schedule with an immediate start.
+ABOUT EMERSON 
 
+Emerson is a global leader in automation technology and software. Through our deep domain expertise and legacy of flawless execution, Emerson helps customers in critical industries like life sciences, energy, power and renewables, chemical and advanced factory automation operate more sustainably while improving productivity, energy security and reliability.
 
-Role Overview:
+With global operations and a comprehensive portfolio of software and technology, we are helping companies implement digital transformation to measurably improve their operations, conserve valuable resources and enhance their safety.
 
+We offer equitable opportunities, celebrate diversity, and embrace challenges with confidence that, together, we can make an impact across a broad spectrum of countries and industries. Whether you’re an established professional looking for a career change, an undergraduate student exploring possibilities, or a recent graduate with an advanced degree, you’ll find your chance to make a difference with Emerson. Join our team – let’s go!
 
-    Spearhead the development of an advanced multi-finger robotic hand through multiple fast-paced design iterations.
-    Engage in high-level decisions concerning the architecture and design of the robotic hand.
-    Apply analytical approaches, such as mathematical modeling and simulations, to design, refine, and optimize cutting-edge robotic hands.
-    Oversee the entire process from concept creation, CAD modeling, analysis, documentation, to validation, ensuring technical viability and market readiness.
-    Develop and test mechanical subsystems of the hand to evaluate the feasibility of concepts.
-
-
-Skills and Qualifications:
-
-
-    Proficient in 3D CAD software for creating intricate part geometries.
-    Experienced in designing and constructing prototype hardware.
-    Skilled in simulation and analysis tools (e.g., FEA, MATLAB).
-    Knowledgeable in miniature actuators and drivetrains, both linear and rotary.
-    Familiar with fingertip sensing technologies.
-    Adept at integrating electromechanical components, including sensors, motors, motor drivers, wiring, and communication systems.
-    Experienced in designing complex, highly articulated robotic systems.
-    Well-versed in the latest developments in dexterous robotic manipulation.
-
-
-Education and Experience:
-
-
-    Bachelor’s or Master’s degree in Mechanical, Biomechanical, Robotics, Mechatronics, or a related field.
-    Over 5 years of experience in Mechanical Engineering, with a focus on solving intricate electro-mechanical challenges.
-    Proven track record of delivering sophisticated electromechanical systems, such as robots, industrial automation equipment, or related systems combining actuation, motion control, custom sensor integration, and electronics.
-    Experience in rapid prototyping and fabrication techniques, including CNC/manual machining, welding, laser cutting, and additive manufacturing.
-
-
-Rewards:
-
-
-    Unrivalled Package + Equity
-    Hybrid working (WFH 2 days per week)
-    Generous PTO
-    Excellent benefits
-    Equity
-
-
-Certus Recruitment Group is a well-established and experienced specialist consultancy providing sales, marketing, and IT recruitment services. We serve the technology sector across North America, the UK, Europe, and Australia.
-
-
-If you are ready to take your career to the next level and make a significant impact, apply now!
+No calls or agencies please. 
