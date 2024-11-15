@@ -1,80 +1,113 @@
-Software Engineer
-Austin, TX, United States (Hybrid)
-Trending
 Job Description
 
-Emerson - Test & Measurement is looking for engineers who are passionate about crafting, developing, and maintaining sophisticated software systems while delivering value to customers.  This position requires outstanding interpersonal skills, taking ownership over design decisions, collaboration with peers and customers alike, and a proficient understanding of how your work will be used by your customers. 
- 
+WHO WE ARE
 
-For This Role, You Will Need:
+Lockheed Martin is a global leader in aerospace, defense, and technology solutions, dedicated to pushing the boundaries of innovation and shaping the future of the industry. With a rich legacy of excellence and a commitment to delivering advanced capabilities to our customers, we are proud to be at the forefront of cutting-edge technology and engineering.
 
-    Bachelors Degree in Computer Science, Computer Engineering or other related degree
-    Proficiency in programming languages such as C#, Python or LabVIEW
-    Experience with testing frameworks
-    Authorized to work in the United States now or in the future without sponsorship
+What We're Doing
 
-Preferred Qualifications that Set You Apart:
+At Lockheed Martin, we're revolutionizing the aerospace and defense sector through groundbreaking technology, advanced manufacturing processes, and a world-class team of professionals. Our mission-driven approach and unwavering dedication to excellence ensure that we continue to deliver superior products and solutions to our customers around the world.
 
-    Prior internship or co-op
-    Strong written, verbal and presentation skills.
-    Customer focus
-    Innovative, out of the box thinker
-    A desire to work closely with hardware development teams to support complex hardware and software systems
+THE WORK
 
- 
+Lockheed Martin is seeking a highly motivated, gregarious, and diversely talented software engineer to lead the development of virtual and augmented reality applications. This position will lead a team through planning, design, production, delivery, and maintenance of a suite of high-tech immersive simulations for training professionals in military scenarios and procedures. Candidates must have a solid computer science background, significant expertise in AR/VR development for military applications, broad program leadership skills, and experience with modern Agile and DevSecOps practices. Integrating game engine-based tools with web APIs and networked communication.
 
-Our Offer To You:
+The position will require:
 
-    Health Benefits
-    Retirement Plan
-    Paid Time Off 
-    A collaborative and innovative work environment that values creativity and growth.
-    Opportunities for professional development and career advancement.
-    The chance to be part of a team that is transforming industries with innovative technology.
-    We are an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.
+Excellent product vision
 
-Note:  National Instruments does NOT petition for H-1B (H1-B transfer) and TN status for this position. 
+Production planning and implementation
 
-About Us 
+Software architecture and design
 
-In 2023, Emerson acquired NI and introduced its new Test & Measurement business group. NI and Emerson share commitments to continuous innovation, operational perfection, and sustainability. In this new chapter, we’ll build on our legacy and leadership in software-connected, automated test and measurement systems. We remain passionate about investing in industry leading innovations, delivering differentiated solutions to our customers around the globe, and helping engineers solve the world’s toughest challenges.   
+Team organization and leadership
 
-Make Test Your Competitive Advantage  
+Customer communication and collaboration
 
-Engineers rely on test and measurement to ensure new technologies deliver the highest levels of safety, reliability, and functionality, while also meeting demand faster than ever. And as products become more and more sophisticated, they require a constant evolution of test and measurement technologies. That’s the work we do every day.  
+Project and scene organization in Unity
 
-Our confirmed test automation technology delivers leading accuracy, efficiency, and reliability from the lab to the manufacturing floor and beyond. And with the industry’s most comprehensive software portfolio, modular hardware, systems, and services, our software-connected approach to test simplifies connecting systems and data to revolutionize how enterprises use test insights to drive product and business performance. 
-About Us
+Coding and debugging in C#
 
-WHY EMERSON 
+CAD conversion pipelines
 
-Our Commitment to Our People
+Agile framework and scrum
 
-At Emerson, we are motivated by a spirit of collaboration that helps our diverse, multicultural teams across the world drive innovation that makes the world healthier, safer, smarter, and more sustainable. And we want you to join us in our bold aspiration.
+Documentation and data/metrics collection
 
-We have built an engaged community of inquisitive, dedicated people who thrive knowing they are welcomed, trusted, celebrated, and empowered to solve the world’s most complex problems — for our customers, our communities, and the planet. You’ll contribute to this vital work while further developing your skills through our award-winning employee development programs. We are a proud corporate citizen in every city where we operate and are committed to our people, our communities, and the world at large. We take this responsibility seriously and strive to make a positive impact through every endeavor.
+Workflow optimization
 
-At Emerson, you’ll see firsthand that our people are at the center of everything we do. So, let’s go. Let’s think differently. Learn, collaborate, and grow. Seek opportunity. Push boundaries. Be empowered to make things better. Speed up to break through. Let’s go, together.
+An ongoing interest in staying current with available hardware, software, tools, and plugin options
 
-Work Authorization
+Who You Are
 
-Emerson will only employ those who are legally authorized to work in the United States. This is not a position for which sponsorship will be provided. Individuals with temporary visas such as E, F-1(including those with OPT or CPT) , H-1, H-2, L-1, B, J or TN, or who need sponsorship for work authorization now or in the future, are not eligible for hire.
+You are a dynamic and results-oriented professional with a passion for driving operational excellence and optimizing production processes. You thrive in a fast-paced environment and are adept at managing complex projects while maintaining a high level of accuracy and attention to detail. Your strong analytical skills, coupled with your ability to communicate effectively and collaborate across departments, make you an invaluable asset to our team.
 
-Equal Opportunity Employer
+WHY JOIN US
 
-Emerson is an Equal Opportunity/Affirmative Action employer. All qualified applicants will receive consideration for employment without regard to sex, race, color, religion, national origin, age, marital status, political affiliation, sexual orientation, gender identity, genetic information, disability or protected veteran status. We are committed to providing a workplace free of any discrimination or harassment.
+Opportunity for Impact: Join a team that is at the forefront of innovation in the aerospace and defense industry and make a significant impact on the success of our organization.
 
-Accessibility Assistance or Accommodation
+Professional Development: Take advantage of unparalleled opportunities for growth and advancement within Lockheed Martin, with access to world-class training and development programs.
 
-If you have a disability and are having difficulty accessing or using this website to apply for a position, please contact: idisability.administrator@emerson.com.   
+Collaborative Culture: Work alongside some of the brightest minds in the industry who share your passion for excellence and who are committed to supporting each other's success.
 
+Competitive Benefits: Enjoy a comprehensive benefits package, including health insurance, retirement plans, and paid time off, as well as competitive salary offerings.
 
-ABOUT EMERSON 
+Cutting-Edge Technology: Be part of a dynamic and forward-thinking work environment where you will have the opportunity to work with the latest technology and contribute to groundbreaking projects that are shaping the future of aerospace and defense.
 
-Emerson is a global leader in automation technology and software. Through our deep domain expertise and legacy of flawless execution, Emerson helps customers in critical industries like life sciences, energy, power and renewables, chemical and advanced factory automation operate more sustainably while improving productivity, energy security and reliability.
+Basic Qualifications
 
-With global operations and a comprehensive portfolio of software and technology, we are helping companies implement digital transformation to measurably improve their operations, conserve valuable resources and enhance their safety.
+2+ years experience with Augmented Reality and Virtual Reality development in Unity 3D
 
-We offer equitable opportunities, celebrate diversity, and embrace challenges with confidence that, together, we can make an impact across a broad spectrum of countries and industries. Whether you’re an established professional looking for a career change, an undergraduate student exploring possibilities, or a recent graduate with an advanced degree, you’ll find your chance to make a difference with Emerson. Join our team – let’s go!
+4+ years experience in program leadership
 
-No calls or agencies please. 
+4+ years experience coding in C# in Unity 3D
+
+4+ years experience creating Editor Scripts and tools in Unity 3D
+
+4+ years experience in UI/UX design (VRUX design experience preferred)
+
+4+ years experience developing for both Apple and Android mobile platforms
+
+4+ years experience with networking and multiplayer applications
+
+4+ years experience working with 3D models and 3D modeling workflows
+
+4+ years experience working with animation, rigs, clips, controllers, and state machines
+
+4+ years experience with OOP, design patterns, event delegates, asynchronous functions, data structures, and algorithms
+
+Exceptionally high standards for work quality, self-motivated, and able to work with minimal supervision
+
+Willingness to train and mentor associate software engineers and multimedia design engineers
+
+Demonstratable design aesthetics (portfolio appreciated)
+
+Desired Skills
+
+Networking, and/or Web RTC or other calling and conferencing configurations
+
+Integrating game engine-based tools with web APIs and networked communication
+
+Experience programming network protocols and communication (ex: UDP/TCP, HTTP, Bluetooth)
+
+MS degree in Computer Science, Human Computer Interaction, or related field experience
+
+Experience with rendering pipelines on different platforms and profiling and optimization techniques in VR
+
+Experience with multiple VR/AR hardware platforms (Vive, Oculus, Dream, Hololens, etc)
+
+Experience with multiple VR SDKS/plugins (OpenVR, SteamVR, VRTK, NewtonVR, etc) algorithms
+
+Experience creating and texturing 3D models
+
+Experience with Shader Scripting
+
+Experience with Particles, Particle Engines, and Particle Scripting
+
+Experience with the Unreal Engine
+
+Experience With Unity3D Interfacing Other External Data Elements
+
+     Bachelor's degree in Computer Science or equivalent Engineering program.
+
+EEO
