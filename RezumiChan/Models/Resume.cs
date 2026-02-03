@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 namespace RezumiChan.Models;
 
 public class Resume
@@ -66,6 +67,19 @@ public class Skill
     public List<string> TopSkills { get; set; } // List of skills under this category
     public List<string> Skills { get; set; } // List of skills under this category
 }
+
+public record SkillBankEntry(
+    int Id,
+    string Category,
+    string Skill
+);
+
+public class OrderedSkillIdsResponse
+{
+    [JsonProperty("ordered_skill_ids")]
+    public List<int> OrderedSkillIds { get; set; } = new();
+}
+
 
 public class Education
 {

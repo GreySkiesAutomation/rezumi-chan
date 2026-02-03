@@ -1,0 +1,70 @@
+{
+  "requiredbulletpoints": [
+    {
+      "ID": 1,
+      "bulletpoint": "Served as a lead and sole Unity engineer across multiple XR projects, shipping client-facing applications, a commercial VR game, and a prize-winning mixed reality experience under aggressive timelines."
+    }
+  ],
+  "bulletpoints": [
+    {
+      "ID": 1,
+      "bulletpoint": "Sole engineer on a large-format interactive XR kiosk for convention environments, delivering a polished Unity application designed for continuous public use on giant touchscreen hardware."
+    },
+    {
+      "ID": 2,
+      "bulletpoint": "Designed and implemented an offline-capable Unity kiosk system with analytics, configurable presentation modes, and an operator control panel, enabling reliable deployments without on-site developer support."
+    },
+    {
+      "ID": 3,
+      "bulletpoint": "Rapidly iterated on client-facing XR software under shifting requirements and tight event deadlines, hardening the experience for public abuse while maintaining high visual and UX polish."
+    },
+    {
+      "ID": 4,
+      "bulletpoint": "Successfully deployed an interactive XR kiosk at multiple exhibitions, leading to continued reuse by the client beyond the initial activation."
+    },
+    {
+      "ID": 5,
+      "bulletpoint": "Led development of Monkey Tower VR, a multi-platform VR puzzle-platformer, prototyping, implementing, and refining the majority of gameplay systems as the project’s primary engineer."
+    },
+    {
+      "ID": 6,
+      "bulletpoint": "Architected and built core systems for Monkey Tower VR, including player locomotion, puzzle logic, enemy behaviors, progression systems, and extensible game mode architecture."
+    },
+    {
+      "ID": 7,
+      "bulletpoint": "Shipped Monkey Tower VR on Meta Quest 2, Quest Pro, Quest 3/3S, and PCVR within one year, launching with minimal bugs and zero game-breaking issues."
+    },
+    {
+      "ID": 8,
+      "bulletpoint": "Collaborated with animation and performance specialists while retaining ownership of overall architecture, tooling, and gameplay implementation for a content-rich VR title."
+    },
+    {
+      "ID": 9,
+      "bulletpoint": "Designed Monkey Tower VR with long-term extensibility in mind, enabling future expansion through additional modes, progression systems, and content updates."
+    },
+    {
+      "ID": 10,
+      "bulletpoint": "Served as sole engineer and systems integrator on Language IRL, a prize-winning mixed reality language learning application developed for the Meta Horizon Start Developer Competition."
+    },
+    {
+      "ID": 11,
+      "bulletpoint": "Built a fully functional mixed reality AI tutor in under one month, integrating computer vision, spatial UI, hand tracking, speech recognition, text-to-speech, and pronunciation grading."
+    },
+    {
+      "ID": 12,
+      "bulletpoint": "Leveraged early Meta Quest 3 passthrough and spatial APIs to transform real-world environments into interactive learning spaces grounded in physical context."
+    },
+    {
+      "ID": 13,
+      "bulletpoint": "Designed resilient AI-driven interaction flows, carefully tuning language generation and feedback systems to ensure supportive, safe, and context-appropriate learning experiences."
+    },
+    {
+      "ID": 14,
+      "bulletpoint": "Language IRL was officially recognized as a prize-winning entry in a Meta-sponsored developer competition, securing $50,000 in funding."
+    },
+    {
+      "ID": 15,
+      "bulletpoint": "Created and maintained a shared internal Unity utility library reused across all HowellXR projects, accelerating development and improving consistency across multiple XR applications."
+    }
+  ]
+}

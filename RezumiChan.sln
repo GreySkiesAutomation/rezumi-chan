@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RezumiChan", "RezumiChan\RezumiChan.csproj", "{90F734C7-914B-4950-A512-C66D6889B227}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RezumiChanGUI", "RezumiChanGUI\RezumiChanGUI.csproj", "{3E83B26F-3675-455F-AFAA-C7CC9837F939}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{90F734C7-914B-4950-A512-C66D6889B227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90F734C7-914B-4950-A512-C66D6889B227}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90F734C7-914B-4950-A512-C66D6889B227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E83B26F-3675-455F-AFAA-C7CC9837F939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E83B26F-3675-455F-AFAA-C7CC9837F939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E83B26F-3675-455F-AFAA-C7CC9837F939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E83B26F-3675-455F-AFAA-C7CC9837F939}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
